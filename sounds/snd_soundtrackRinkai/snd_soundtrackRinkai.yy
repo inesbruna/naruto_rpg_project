@@ -1,0 +1,25 @@
+{
+  "$GMSound":"",
+  "%Name":"snd_soundtrackRinkai",
+  "audioGroupId":{
+    "name":"audiogroup_default",
+    "path":"audiogroups/audiogroup_default",
+  },
+  "bitDepth":1,
+  "bitRate":128,
+  "compression":0,
+  "conversionMode":0,
+  "duration":137.9004,
+  "name":"snd_soundtrackRinkai",
+  "parent":{
+    "name":"soundtrack",
+    "path":"folders/Sons/soundtrack.yy",
+  },
+  "preload":false,
+  "resourceType":"GMSound",
+  "resourceVersion":"2.0",
+  "sampleRate":44100,
+  "soundFile":"snd_soundtrackRinkai.mp3",
+  "type":0,
+  "volume":0.72,
+}
