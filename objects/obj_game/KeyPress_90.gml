@@ -3,12 +3,14 @@
 with(obj_player){
 	if(place_meeting(x, y, obj_forest)){
 		if(room = training_grounds){
+			instance_create_depth(0, 0, -999999, obj_fade);
 			room_goto(forest);
 			obj_player.x = 30;
 			obj_player.y = 170;
 		}
 	}
 	if(place_meeting(x, y, obj_trainingGrounds)){
+		instance_create_depth(0, 0, -999999, obj_fade);
 		room_goto(training_grounds);
 		if(room == konoha){
 			obj_player.x = 68;
@@ -19,6 +21,7 @@ with(obj_player){
 		}
 	}
 	if(place_meeting(x, y, obj_konoha)){
+		instance_create_depth(0, 0, -999999, obj_fade);
 		room_goto(konoha);
 		obj_player.x = 926;
 		obj_player.y = 148;

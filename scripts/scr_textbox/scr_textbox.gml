@@ -1,6 +1,52 @@
+function scr_set_defaults_for_text(){
+	line_break_pos[0, page_number] = 0;
+	line_break_num[page_number] = 0;
+	line_break_offset[page_number] = 0;
+	
+	txtb_spr[page_number] = spr_textbox;
+	speaker_sprite[page_number] = noone;
+	speaker_side[page_number] = 1;
+}
+
+
+/// @param text
+/// @param [portrait]
+///@param [side]
 function scr_text(_text){
+	scr_set_defaults_for_text();
 	text[page_number] = _text;
 	
+	//get character info
+	if argument_count > 1 {
+		switch(argument[1]){
+			
+		case "Kakashi":
+			speaker_sprite[page_number] = spr_kakashi_portrait_stance;
+			txtb_spr[page_number] = spr_textbox;
+		break;
+		
+		case "Kakashi Alert":
+			speaker_sprite[page_number] = spr_kakashi_portrait_alert;
+			txtb_spr[page_number] = spr_textbox;
+		break;
+		
+		case "Kakashi Happy":
+			speaker_sprite[page_number] = spr_kakashi_portrait_happy;
+			txtb_spr[page_number] = spr_textbox;
+		break;
+		
+		case "Naruto Alert":
+			speaker_sprite[page_number] = spr_naruto_portrait_alert;
+			txtb_spr[page_number] = spr_textbox;
+			speaker_side[page_number] = -1;
+		break;
+		
+		}
+	}
+	//side the caracter is on
+	if argument_count > 2{
+		speaker_side[page_number] = argument[2];	
+	}
 	page_number++;
 }
 

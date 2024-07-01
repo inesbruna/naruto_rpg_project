@@ -1,27 +1,27 @@
 {
   "$GMSprite":"",
-  "%Name":"spr_naruto_portrait",
+  "%Name":"spr_naruto_portrait_alert",
   "bboxMode":0,
-  "bbox_bottom":213,
-  "bbox_left":0,
-  "bbox_right":235,
-  "bbox_top":0,
+  "bbox_bottom":147,
+  "bbox_left":2,
+  "bbox_right":147,
+  "bbox_top":4,
   "collisionKind":1,
   "collisionTolerance":0,
   "DynamicTexturePage":false,
   "edgeFiltering":false,
   "For3D":false,
   "frames":[
-    {"$GMSpriteFrame":"","%Name":"4416b9de-4787-4cdc-8713-54ae81e9a3c4","name":"4416b9de-4787-4cdc-8713-54ae81e9a3c4","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"","%Name":"2577e399-3d6d-47f5-b6ee-0b6809c8b761","name":"2577e399-3d6d-47f5-b6ee-0b6809c8b761","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,
-  "height":214,
+  "height":150,
   "HTile":false,
   "layers":[
-    {"$GMImageLayer":"","%Name":"71507a73-c672-41ba-bad7-8491084fa0e2","blendMode":0,"displayName":"default","isLocked":false,"name":"71507a73-c672-41ba-bad7-8491084fa0e2","opacity":100.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},
+    {"$GMImageLayer":"","%Name":"b806e47f-a5fe-4d2e-aa67-9fb8e4fd9b44","blendMode":0,"displayName":"default","isLocked":false,"name":"b806e47f-a5fe-4d2e-aa67-9fb8e4fd9b44","opacity":100.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},
   ],
-  "name":"spr_naruto_portrait",
+  "name":"spr_naruto_portrait_alert",
   "nineSlice":null,
   "origin":0,
   "parent":{
@@ -33,7 +33,7 @@
   "resourceVersion":"2.0",
   "sequence":{
     "$GMSequence":"",
-    "%Name":"spr_naruto_portrait",
+    "%Name":"spr_naruto_portrait_alert",
     "autoRecord":true,
     "backdropHeight":768,
     "backdropImageOpacity":0.5,
@@ -57,7 +57,7 @@
       "resourceType":"KeyframeStore<MomentsEventKeyframe>",
       "resourceVersion":"2.0",
     },
-    "name":"spr_naruto_portrait",
+    "name":"spr_naruto_portrait_alert",
     "playback":1,
     "playbackSpeed":30.0,
     "playbackSpeedType":0,
@@ -69,8 +69,8 @@
     "tracks":[
       {"$GMSpriteFramesTrack":"","builtinName":0,"events":[],"inheritsTrackColour":true,"interpolation":1,"isCreationTrack":false,"keyframes":{"$KeyframeStore<SpriteFrameKeyframe>":"","Keyframes":[
             {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
-                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"4416b9de-4787-4cdc-8713-54ae81e9a3c4","path":"sprites/spr_naruto_portrait/spr_naruto_portrait.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
-              },"Disabled":false,"id":"8e8a4af3-cc6c-49f8-84bf-44b296d9d7a4","IsCreationKey":false,"Key":0.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
+                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"2577e399-3d6d-47f5-b6ee-0b6809c8b761","path":"sprites/spr_naruto_portrait_alert/spr_naruto_portrait_alert.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
+              },"Disabled":false,"id":"b3e678e6-b77d-47eb-9ffd-3065800251bb","IsCreationKey":false,"Key":0.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
           ],"resourceType":"KeyframeStore<SpriteFrameKeyframe>","resourceVersion":"2.0",},"modifiers":[],"name":"frames","resourceType":"GMSpriteFramesTrack","resourceVersion":"2.0","spriteId":null,"trackColour":0,"tracks":[],"traits":0,},
     ],
     "visibleRange":null,
@@ -86,5 +86,5 @@
   },
   "type":0,
   "VTile":false,
-  "width":236,
+  "width":150,
 }

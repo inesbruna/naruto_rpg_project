@@ -1,27 +1,27 @@
 {
   "$GMSprite":"",
-  "%Name":"spr_kakashi_portrait",
+  "%Name":"spr_kakashi_portrait_stance",
   "bboxMode":0,
-  "bbox_bottom":169,
-  "bbox_left":0,
-  "bbox_right":218,
-  "bbox_top":0,
+  "bbox_bottom":147,
+  "bbox_left":2,
+  "bbox_right":147,
+  "bbox_top":2,
   "collisionKind":1,
   "collisionTolerance":0,
   "DynamicTexturePage":false,
   "edgeFiltering":false,
   "For3D":false,
   "frames":[
-    {"$GMSpriteFrame":"","%Name":"56dea897-f836-4d72-8c32-e30ff0654ae2","name":"56dea897-f836-4d72-8c32-e30ff0654ae2","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"","%Name":"b8d1577f-ab7e-4b91-accd-178b1e06d3a5","name":"b8d1577f-ab7e-4b91-accd-178b1e06d3a5","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,
-  "height":170,
+  "height":150,
   "HTile":false,
   "layers":[
-    {"$GMImageLayer":"","%Name":"6dfb355a-ad3b-4c0d-abc7-2fd591d95c14","blendMode":0,"displayName":"default","isLocked":false,"name":"6dfb355a-ad3b-4c0d-abc7-2fd591d95c14","opacity":100.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},
+    {"$GMImageLayer":"","%Name":"a02432b9-e0f9-42a4-9956-79683364cf05","blendMode":0,"displayName":"default","isLocked":false,"name":"a02432b9-e0f9-42a4-9956-79683364cf05","opacity":100.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},
   ],
-  "name":"spr_kakashi_portrait",
+  "name":"spr_kakashi_portrait_stance",
   "nineSlice":null,
   "origin":0,
   "parent":{
@@ -33,7 +33,7 @@
   "resourceVersion":"2.0",
   "sequence":{
     "$GMSequence":"",
-    "%Name":"spr_kakashi_portrait",
+    "%Name":"spr_kakashi_portrait_stance",
     "autoRecord":true,
     "backdropHeight":768,
     "backdropImageOpacity":0.5,
@@ -57,7 +57,7 @@
       "resourceType":"KeyframeStore<MomentsEventKeyframe>",
       "resourceVersion":"2.0",
     },
-    "name":"spr_kakashi_portrait",
+    "name":"spr_kakashi_portrait_stance",
     "playback":1,
     "playbackSpeed":30.0,
     "playbackSpeedType":0,
@@ -69,8 +69,8 @@
     "tracks":[
       {"$GMSpriteFramesTrack":"","builtinName":0,"events":[],"inheritsTrackColour":true,"interpolation":1,"isCreationTrack":false,"keyframes":{"$KeyframeStore<SpriteFrameKeyframe>":"","Keyframes":[
             {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
-                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"56dea897-f836-4d72-8c32-e30ff0654ae2","path":"sprites/spr_kakashi_portrait/spr_kakashi_portrait.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
-              },"Disabled":false,"id":"7cd27cf9-fd33-46b6-a360-0cf9c094af6a","IsCreationKey":false,"Key":0.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
+                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"b8d1577f-ab7e-4b91-accd-178b1e06d3a5","path":"sprites/spr_kakashi_portrait_stance/spr_kakashi_portrait_stance.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
+              },"Disabled":false,"id":"3e723468-55e4-41bb-ae22-0b291fd447e4","IsCreationKey":false,"Key":0.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
           ],"resourceType":"KeyframeStore<SpriteFrameKeyframe>","resourceVersion":"2.0",},"modifiers":[],"name":"frames","resourceType":"GMSpriteFramesTrack","resourceVersion":"2.0","spriteId":null,"trackColour":0,"tracks":[],"traits":0,},
     ],
     "visibleRange":null,
@@ -86,5 +86,5 @@
   },
   "type":0,
   "VTile":false,
-  "width":219,
+  "width":150,
 }
