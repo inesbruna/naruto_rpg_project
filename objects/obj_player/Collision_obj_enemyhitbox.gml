@@ -22,7 +22,7 @@ if(defense = false && transforming = false){
 	
 	if(selection==0){
 		switch(transformation){
-			case 0: sprite_index = spr_naruto_hit; break;
+			case 0: sprite_index = narutoHit; break;
 			case 1: sprite_index = spr_naruto_sixpaths_hit; break;
 		}
 	} 

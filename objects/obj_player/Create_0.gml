@@ -33,3 +33,18 @@ vspd = 0;
 acc = 2;
 grv = 0.3;
 grounded = false;
+
+//animations
+naruto = spr_naruto;
+narutoAttack = spr_naruto_attack;
+narutoAttack2 = spr_naruto_attack2;
+narutoAttack3 = spr_naruto_attack3;
+narutoCharging = spr_naruto_charging;
+narutoDead = spr_naruto_dead;
+narutoDefense = spr_naruto_defense;
+narutoFalling = spr_naruto_falling;
+narutoHit = spr_naruto_hit;
+narutoJumping = spr_naruto_jumping;
+narutoPickup = spr_naruto_pickup;
+narutoRunning = spr_naruto_running;
+narutoTransform = spr_naruto_transform;

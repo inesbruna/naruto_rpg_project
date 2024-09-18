@@ -1,7 +1,6 @@
 /// @description Animations and Functions
 
-//criação da variável _input
-//var _input = rollback_get_input();
+//keyboard functions
 var	_left = keyboard_check(ord("A"));
 var _right = keyboard_check(ord("D"));
 var _jump = keyboard_check(ord("W"));
@@ -11,10 +10,15 @@ var _transform = keyboard_check_pressed(ord("1"));
 var _skill1 = keyboard_check_pressed(ord("U"));
 var _character = keyboard_check(vk_tab);
 var _pickup = keyboard_check_pressed(ord("Z"));
+
 //cheats
 var _revive = keyboard_check(vk_f1);
 
-//movimento
+//load sprites
+
+
+
+//moviment
 if (!dead && !attacking && !hitting && !defense && !chargingchakra && !skill1 && !usingSkill1 && !dashing && endAction){
 	move = _right - _left;
 	hspd = move * 4;
@@ -76,26 +80,26 @@ if (!canDash && grounded && dashTimer){
 
 //grounded
 if place_meeting(x,y+1,obj_wall){
-	if(sprite_index = spr_naruto_falling && !grounded){
+	if(sprite_index = narutoFalling && !grounded){
 		audio_play_sound(snd_landing, 0, false);
 		instance_create_depth(x, y+30, 9, obj_dust);
 	}
 	grounded = true;
 } else { grounded = false; }
 
-//animações
+//animations
 //naruto
 if (!dead){
 	if (transformation == 0){
 		if(!attacking && !hitting && !defense && !transforming && !skill1 && !usingSkill1 && endAction){
 			//correr
 			if (_left && grounded) {
-				sprite_index = spr_naruto_running;
+				sprite_index = narutoRunning;
 				image_xscale = -1;
 			} else if (_right && grounded){
-				sprite_index = spr_naruto_running;
+				sprite_index = narutoRunning;
 				image_xscale = 1;
-			} else { sprite_index = spr_naruto; image_speed = 0.3; }
+			} else { sprite_index = naruto; image_speed = 0.3; }
 		
 			//COMBO
 			if (_combo && canAttack && !afterCombo){
@@ -122,21 +126,21 @@ if (!dead){
 					if(comboCounter == 0){
 						image_index = 0;
 						image_speed = 0.6;
-						sprite_index = spr_naruto_attack;
+						sprite_index = narutoAttack;
 						audio_play_sound(snd_combo1, 1, 0);
 						comboCounter = 1;
 						alarm[2] = room_speed/2;
 					} else if (comboCounter == 1){
 						image_index = 0;
 						image_speed = 0.6;
-						sprite_index = spr_naruto_attack2;
+						sprite_index = narutoAttack2;
 						audio_play_sound(snd_combo2, 1, 0);
 						comboCounter = 2;
 						alarm[2] = room_speed/2;
 					} else {
 						image_index = 0;
 						image_speed = 0.6;
-						sprite_index = spr_naruto_attack3;
+						sprite_index = narutoAttack3;
 						audio_play_sound(snd_combo3, 1, 0);
 						comboCounter = 0;
 						afterCombo = true; //activate cooldown after a whole combo
@@ -146,34 +150,34 @@ if (!dead){
 			}
 		
 			if (!grounded) {
-				sprite_index = spr_naruto_jumping;
-				if (sign(vspd) > 0) sprite_index = spr_naruto_falling;
+				sprite_index = narutoJumping;
+				if (sign(vspd) > 0) sprite_index = narutoFalling;
 			} 
 		}
 		
 		//retornar animação após bater
 		if(attacking){
 			switch (comboCounter){
-			case 1: if (image_index >= 4 - image_speed){
+			case 1: if (image_index >= image_number - image_speed){
 				attacking = false;
 				canAttack = true;
-				sprite_index = spr_naruto;
+				sprite_index = naruto;
 				image_speed = 0.3;
 			}
 			break;
 			
-			case 2: if (image_index >= 4 - image_speed){
+			case 2: if (image_index >= image_number - image_speed){
 				attacking = false;
 				canAttack = true;
-				sprite_index = spr_naruto;
+				sprite_index = naruto;
 				image_speed = 0.3;
 			}
 			break;
 			
-			case 0: if (image_index >= 5 - image_speed){
+			case 0: if (image_index >= image_number - image_speed){
 				attacking = false;
 				canAttack = true;
-				sprite_index = spr_naruto;
+				sprite_index = naruto;
 				image_speed = 0.3;
 			}
 			break;
@@ -193,12 +197,12 @@ if (!dead){
 		if (skill1 = true){
 			if(place_meeting(x,y, obj_enemyhitbox)){
 				skill1 = false;
-				sprite_index = spr_naruto;
+				sprite_index = naruto;
 				image_speed = 0.3;
 			}
 			sprite_index = spr_naruto_chargingRasengan;
 			hspd = 0;
-			if (image_index >= 16 - image_speed){
+			if (image_index >= image_number - image_speed){
 				usingSkill1 = true;
 				skill1 = false
 				image_index = 0;
@@ -220,9 +224,9 @@ if (!dead){
 			var _hitbox = instance_create_depth(x, y, depth, obj_narutohitboxskill1);
 			_hitbox.player = self;
 			_hitbox.image_xscale = image_xscale;
-			if (image_index >= 17 - image_speed){
+			if (image_index >= image_number - image_speed){
 				usingSkill1 = false;
-				sprite_index = spr_naruto;
+				sprite_index = naruto;
 				image_speed = 0.3;
 				audio_play_sound(snd_rasengan, 0, false);
 			}
@@ -231,7 +235,7 @@ if (!dead){
 		//charging chakra
 		if (_charge){
 			chargingchakra = true;
-			sprite_index = spr_naruto_charging;
+			sprite_index = narutoCharging;
 			global.player_chakra += 0.3;
 			hspd = 0;
 		} else {
@@ -247,8 +251,8 @@ if (!dead){
 			audio_stop_sound(snd_chakra);	
 		}
 		
-		if(sprite_index = spr_naruto_hit && hitting = false){
-			sprite_index = spr_naruto;
+		if(sprite_index = narutoHit && hitting = false){
+			sprite_index = naruto;
 		}
 		
 		//defense trigger
@@ -258,7 +262,7 @@ if (!dead){
 		
 		if (defense = true){
 			hspd = 0;
-			sprite_index = spr_naruto_defense;
+			sprite_index = narutoDefense;
 		}
 		
 		if (keyboard_check_released(ord("K"))){
@@ -267,13 +271,13 @@ if (!dead){
 			canAttack = true;
 		}	
 		
-		if (sprite_index == spr_naruto_defense && defense = false){
-			sprite_index = spr_naruto;
+		if (sprite_index == narutoDefense && defense = false){
+			sprite_index = naruto;
 		}
 		
 		if(_transform && transformation == 0 && transforming == false){
 			transforming = true;
-			sprite_index = spr_naruto_transform;
+			sprite_index = narutoTransform;
 			image_speed = 0.5;
 			hspd = 0;
 		}
@@ -282,7 +286,7 @@ if (!dead){
 			hspd = 0;	
 		}
 		
-		if (image_index >= 10 - image_speed && transforming == true){
+		if (image_index >= image_number - image_speed && transforming == true){
 				transformation = 1;
 				transforming = false;
 				global.player_healthmax += 100;
@@ -297,9 +301,9 @@ if (!dead){
 		//Pickup Animation
 		if(_pickup && endAction && place_meeting(x,y,obj_items)){
 			endAction = false;
-			sprite_index = spr_naruto_pickup;
+			sprite_index = narutoPickup;
 			image_index = 0;
-			image_speed = 1;
+			image_speed = 0.3;
 			alarm[8] = 30;
 		}
 	}
@@ -465,7 +469,7 @@ if (!dead){
 		}	
 		
 		if (sprite_index == spr_naruto_sixpaths_defense && defense = false){
-			sprite_index = spr_naruto;
+			sprite_index = naruto;
 		}
 	}
 	
@@ -483,7 +487,7 @@ if (!dead){
 		global.player_chakramax -= 100;
 		global.player_strength -= 20;
 		global.player_intelligence -= 20;
-		sprite_index = spr_naruto;
+		sprite_index = naruto;
 		image_speed = 0.3;
 	}
 	

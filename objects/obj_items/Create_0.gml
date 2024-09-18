@@ -1,6 +1,6 @@
 /// @description Inserir descrição aqui
 // Você pode escrever seu código neste editor
-image_index = 29;
+image_index = struct_names_count(obj_game.s_items);
 image_speed = 0;
 alarm[0] = 5000;
 randomize();

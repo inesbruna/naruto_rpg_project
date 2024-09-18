@@ -95,6 +95,10 @@ mouseOver = function(){
 				other.slotHover = 9;
 				other.inventoryHover = id;
 			} 
+			if (point_in_rectangle(mx, my, xx+131, yy+343, xx+227, yy+439)){ //costume slot
+				other.slotHover = 10;
+				other.inventoryHover = id;
+			} 
 		}
 	}
 }	

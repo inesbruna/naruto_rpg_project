@@ -309,6 +309,17 @@ s_items = {
 		item_id : 28,
 		type : "common"
 	},
+	jacketCostume : {
+		name : "Naruto's Jacket Costume",
+		description : "A new unique costume for Naruto Teen Character.",
+		hp : 0,
+		chakra : 0,
+		strength : 0,
+		intelligence : 0,
+		slot : 10,
+		item_id : 29,
+		type : "special"
+	},
 	//usáveis
 	lamenBowl : {
 		name : "Lamen Bowl",

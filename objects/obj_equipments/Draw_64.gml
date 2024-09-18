@@ -162,5 +162,21 @@ if(obj_hud.open_inventory){
 		draw_sprite_ext(spr_items, inventory[9], xx-6, yy, 3, 3, 0, c_white, 1);
 		draw_set_alpha(1.0);
 	}
+	//SLOT COSTUME
+	var xx = 1379 + (1 mod rowLength) * 108 + 2;
+	var yy = 596 + (1 div rowLength) * 108 + 2;
+	var hover = (obj_mouse.inventoryHover == id) && (obj_mouse.slotHover == 10)
+	if(inventory[10] == -1){
+		draw_sprite_ext(spr_inventoryboxCostume,hover,xx,yy, 3, 3, 0, c_white, 1);
+	} else {
+		draw_sprite_ext(spr_inventorybox,hover,xx,yy, 3, 3, 0, c_white, 1);
+	}
+	if (inventory[10] != -1){
+		var alpha = 1.0;
+		if (obj_mouse.inventoryDrag == id) && (obj_mouse.slotDrag == 10) alpha = 0.5;
+		draw_set_alpha(alpha);
+		draw_sprite_ext(spr_items, inventory[10], xx-6, yy, 3, 3, 0, c_white, 1);
+		draw_set_alpha(1.0);
+	}
 }
 

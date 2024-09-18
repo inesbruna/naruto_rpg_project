@@ -24,7 +24,15 @@ if ((slotHover != -1) && (inventoryHover.inventory[slotHover] != -1)){ //Verific
 			var type = v.type;
 		}
 	}
-	if(type == "legendary") draw_set_color(c_purple);
+	
+	if(type == "legendary"){
+		draw_set_color(c_purple);
+	}
+	
+	if(type == "special") { 
+		draw_set_color(c_aqua); 
+	}
+	
 	draw_text(577, 160, name);
 	draw_set_color(c_white);
 	draw_text(577, 180, description);
