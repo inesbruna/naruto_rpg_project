@@ -1,4 +1,4 @@
-# ** Naruto RPG Project **
+# Naruto RPG Project
 Naruto RPG Project is a game from the famous anime Naruto Shippuden in a sidescroller rpg format, made especially to train my programming knowledge.
 
 ## **Features:**
