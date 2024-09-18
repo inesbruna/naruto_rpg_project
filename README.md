@@ -14,6 +14,6 @@ Level System: Defeat opponents and earn experience points to continue growing an
 
 Transformations: achieve powerups through level progression and become stronger and more stylish.
 
-![Screenshot of the game.](https://myoctocat.com/assets/images/base-octocat.svg)](https://imgur.com/a/3pWHaoX)
+![Screenshot of the game.](https://imgur.com/a/3pWHaoX)]
 
 ***This game has no intention of being commercialized and all character rights belong to Masashi Kishimoto***
