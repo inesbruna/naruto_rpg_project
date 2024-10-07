@@ -1,12 +1,9 @@
 /// @description Inserir descrição aqui
 // Você pode escrever seu código neste editor
 draw_set_font(fnt_player_name);
-/*draw_text(0,50, attacking);
-draw_text(0,100, dead);
-draw_text(0,150, canAttack);
-draw_text(0,200, afterCombo);
-draw_text(0,250, defense); */
-
+draw_text(0,300, afterCombo);
+draw_text(0,350, timer);
+draw_text(0,400, state);
 //healthbar e chakrabar
 
 draw_healthbar(135, 105, 575, 146, global.player_chakra, c_black, c_blue, c_blue, 0, true, false);
@@ -20,8 +17,8 @@ draw_text(44,183, "Level: ");
 draw_text(164,183, global.player_level);
 
 
-//you died and pvp on
+//you died
 if(dead){
-	draw_text(room_height/2, room_width/2, "Voce morreu");
+	draw_text(room_height/2, room_width/2, "You Died.");
 }
   

@@ -26,7 +26,7 @@
   "origin":0,
   "parent":{
     "name":"Naruto Six Paths",
-    "path":"folders/Sprites/Characters/Naruto Teen/Naruto Six Paths.yy",
+    "path":"folders/Sprites/Characters/Naruto Teen/Naruto Teen Base/Naruto Six Paths.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",

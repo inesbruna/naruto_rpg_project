@@ -10,10 +10,12 @@ function scr_game_text(_text_id){
 				scr_option("Yep!", "Kakashi - Yes");
 				scr_option("Nope!", "Kakashi - No");
 			break;
+			
 			case ("Kakashi - Yes"):
 				scr_text("Yes, sir!", "Naruto Alert", 1);
-				scr_text("Good! Keep walking to the right to start your training.", "Kakashi Happy", -1);
-			break;
+				scr_text("Nice.", "Kakashi Happy", -1);
+				break;
+			
 			case ("Kakashi - No"):
 				scr_text("Sorry, i didn't understand correctly.", "Naruto Alert", 1);
 				scr_text("Talk to me again and i will repeat everything.", "Kakashi Alert", -1);

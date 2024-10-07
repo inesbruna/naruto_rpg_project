@@ -31,8 +31,8 @@
   "nineSlice":null,
   "origin":9,
   "parent":{
-    "name":"grupo1",
-    "path":"folders/Sprites/Characters/grupo1.yy",
+    "name":"Naruto Jacket",
+    "path":"folders/Sprites/Characters/Naruto Teen/Naruto Jacket.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",

@@ -1,2 +1,2 @@
-/// @description Attack CD
+/// @description afterCombo
 afterCombo = false;

@@ -1,0 +1,1 @@
+buttonRight = 0;

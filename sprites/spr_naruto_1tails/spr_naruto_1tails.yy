@@ -31,7 +31,7 @@
   "origin":0,
   "parent":{
     "name":"Naruto Kyuubi",
-    "path":"folders/Sprites/Characters/Naruto Teen/Naruto Kyuubi.yy",
+    "path":"folders/Sprites/Characters/Naruto Teen/Naruto Teen Base/Naruto Kyuubi.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",

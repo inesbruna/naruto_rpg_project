@@ -1,5 +1,4 @@
-/// @description Combo CD
+/// @description nextCombo
+nextCombo = false;
 comboCounter = 0;
-afterCombo = true;
-alarm[3] = room_speed;
 

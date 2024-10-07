@@ -15,14 +15,9 @@ stack = array_create(INVENTORY_SLOTS, 0);
 open_menu = false;
 open_inventory = false;
 
-//player status
-global.player_healthmax = 100;
-global.player_health = global.player_healthmax;
-global.player_chakramax = 100;
-global.player_chakra = 0;
-global.player_xp = 0;
-global.player_level = 0;
-global.player_points = 0;
-global.player_strength = 10;
-global.player_intelligence = 10;
-
+//quests
+quest[0] = noone;
+quest[1] = noone;
+quest[2] = noone;
+quest[3] = noone;
+quest[4] = noone;

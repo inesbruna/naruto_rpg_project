@@ -1,4 +1,2 @@
-/// @description Inserir descrição aqui
-// Você pode escrever seu código neste editor
-canDash = true;
-dashing = false;
+/// @description Dash CD
+dashCooldown = false;

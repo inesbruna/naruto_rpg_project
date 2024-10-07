@@ -26,7 +26,7 @@
   "origin":9,
   "parent":{
     "name":"hitboxs",
-    "path":"folders/Sprites/Characters/Naruto Teen/Base/hitboxs.yy",
+    "path":"folders/Sprites/Characters/Naruto Teen/Naruto Teen Base/Base/hitboxs.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",

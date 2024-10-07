@@ -139,4 +139,6 @@ if(hp <= 0){
 		instance_create_depth(x, y, 9, obj_items);
 		instance_destroy();
 	}
+	//quests counters
+	
 }

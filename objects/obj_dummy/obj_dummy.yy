@@ -2,7 +2,7 @@
   "$GMObject":"",
   "%Name":"obj_dummy",
   "eventList":[
-    {"$GMEvent":"","%Name":"","collisionObjectId":{"name":"obj_narutohitbox","path":"objects/obj_narutohitbox/obj_narutohitbox.yy",},"eventNum":0,"eventType":4,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
+    {"$GMEvent":"v1","%Name":"","collisionObjectId":{"name":"obj_narutohitbox","path":"objects/obj_narutohitbox/obj_narutohitbox.yy",},"eventNum":0,"eventType":4,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
   "name":"obj_dummy",

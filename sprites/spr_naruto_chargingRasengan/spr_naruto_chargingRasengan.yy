@@ -42,7 +42,7 @@
   "origin":9,
   "parent":{
     "name":"Base",
-    "path":"folders/Sprites/Characters/Naruto Teen/Base.yy",
+    "path":"folders/Sprites/Characters/Naruto Teen/Naruto Teen Base/Base.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",

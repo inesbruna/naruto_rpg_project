@@ -1,28 +1,24 @@
-/// @description Inserir descrição aqui
-// Você pode escrever seu código neste editor
-/* FIM DO ROLLBACK
-rollback_define_input(
-{
-        left: ord("A"),
-        right: ord("D"),
-		jump: ord("W"),
-		combo: ord("J"),
-		defense: ord("K"),
-		charge: ord("L"),
-		skill1: ord("U"),
-		character: vk_tab,
-		friendly_fire: vk_space,
-		//cheats
-		revive: vk_f1,
-});
+/// @creation game
 
-rollback_define_player(obj_player, "Instances");
+//player status
+global.player_healthmax = 100;
+global.player_health = global.player_healthmax;
+global.player_chakramax = 100;
+global.player_chakra = 0;
+global.player_xp = 0;
+global.player_level = 0;
+global.player_points = 0;
+global.player_strength = 10;
+global.player_intelligence = 10;
+global.player_clan = noone;
+global.hair = 0;
+global.head = 0;
+global.clothing = 0;
+global.hairColor = 0;
+global.eyesColor = 0;
 
-if (!rollback_join_game())
-{
-	rollback_create_game(2, true);
-}
-*/
+
+
 //states enemy
 enum e_state{
 	idle,
@@ -364,5 +360,18 @@ s_items = {
 		slot : noone,
 		item_id : 13,
 		type : "common"
+	}
+};
+
+// Missions
+
+s_quests = {
+	quest0 : {
+		name : "Defeat three Konoha ninjas",
+		description : "There are Konoha ninjas in the forest who are waiting for training, go and defeat three of them.",
+		condition : 3,
+		reward_xp : 10,
+		reward_ryo : 15,
+		reward_item : noone
 	}
 };

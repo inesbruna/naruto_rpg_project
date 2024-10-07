@@ -5,7 +5,7 @@ if(open_menu){
 	draw_sprite_ext(spr_menu, -1, 500, 200, 3, 3, 0, c_white, 1);
 	draw_text(560, 240, "Nickname: ");
 	draw_text(560, 270, "Level: ");
-	draw_text(560, 300, "Class: noone");
+	draw_text(560, 300, "Clan: " + string(global.player_clan));
 	draw_sprite(spr_rasengan, -1, 550, 450);
 	draw_text(650, 465, "Skill 1: Rasengan");
 	draw_text(1200, 420, "Status");
@@ -35,3 +35,23 @@ if(open_inventory){
 	}
 }
 
+draw_text(1000, 200, "Quests em andamento");
+if(quest[0] != noone){
+	draw_text(1000, 250, quest[0]);
+}
+
+if(quest[1] != noone){
+	draw_text(1000, 300, quest[1]);
+}
+
+if(quest[2] != noone){
+	draw_text(1000, 350, quest[2]);
+}
+
+if(quest[3] != noone){
+	draw_text(1000, 400, quest[3]);
+}
+
+if(quest[4] != noone){
+	draw_text(1000, 450, quest[4]);
+}
