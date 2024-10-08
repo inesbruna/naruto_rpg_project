@@ -10,6 +10,6 @@ draw_sprite_ext(spr_clansSelect, -1, select_x-50, select_y, 4, 4, 0, c_white, 1)
 
 draw_set_font(fnt_player_name);
 draw_set_color(c_white);
-draw_text(1350, 580, hairName);
-draw_text(1350, 670, hairColor);
-draw_text(1350, 760, eyesColor);
+draw_text(1350, 620, hairName);
+draw_text(1350, 720, hairColor);
+draw_text(1350, 820, eyesColor);

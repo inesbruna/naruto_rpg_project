@@ -12,8 +12,8 @@
   "edgeFiltering":false,
   "For3D":false,
   "frames":[
-    {"$GMSpriteFrame":"","%Name":"39117f97-dd9f-4ff6-8f9d-37f22ae08e50","name":"39117f97-dd9f-4ff6-8f9d-37f22ae08e50","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
     {"$GMSpriteFrame":"","%Name":"acfdbd0a-d31e-4afa-aca0-2582bc17e981","name":"acfdbd0a-d31e-4afa-aca0-2582bc17e981","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"","%Name":"39117f97-dd9f-4ff6-8f9d-37f22ae08e50","name":"39117f97-dd9f-4ff6-8f9d-37f22ae08e50","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,
@@ -24,7 +24,7 @@
   ],
   "name":"spr_hair3_jumping",
   "nineSlice":null,
-  "origin":0,
+  "origin":9,
   "parent":{
     "name":"hair3",
     "path":"folders/Sprites/Player/hair/hair3.yy",
@@ -70,17 +70,17 @@
     "tracks":[
       {"$GMSpriteFramesTrack":"","builtinName":0,"events":[],"inheritsTrackColour":true,"interpolation":1,"isCreationTrack":false,"keyframes":{"$KeyframeStore<SpriteFrameKeyframe>":"","Keyframes":[
             {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
-                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"39117f97-dd9f-4ff6-8f9d-37f22ae08e50","path":"sprites/spr_hair3_jumping/spr_hair3_jumping.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
-              },"Disabled":false,"id":"a949f8ae-5266-466d-9465-463e9b37b9e4","IsCreationKey":false,"Key":0.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
-            {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
                 "0":{"$SpriteFrameKeyframe":"","Id":{"name":"acfdbd0a-d31e-4afa-aca0-2582bc17e981","path":"sprites/spr_hair3_jumping/spr_hair3_jumping.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
-              },"Disabled":false,"id":"ca901262-4c4e-4592-b19b-2a2b5cd34f26","IsCreationKey":false,"Key":1.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
+              },"Disabled":false,"id":"ca901262-4c4e-4592-b19b-2a2b5cd34f26","IsCreationKey":false,"Key":0.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
+            {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
+                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"39117f97-dd9f-4ff6-8f9d-37f22ae08e50","path":"sprites/spr_hair3_jumping/spr_hair3_jumping.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
+              },"Disabled":false,"id":"a949f8ae-5266-466d-9465-463e9b37b9e4","IsCreationKey":false,"Key":1.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
           ],"resourceType":"KeyframeStore<SpriteFrameKeyframe>","resourceVersion":"2.0",},"modifiers":[],"name":"frames","resourceType":"GMSpriteFramesTrack","resourceVersion":"2.0","spriteId":null,"trackColour":0,"tracks":[],"traits":0,},
     ],
     "visibleRange":null,
     "volume":1.0,
-    "xorigin":0,
-    "yorigin":0,
+    "xorigin":5,
+    "yorigin":24,
   },
   "swatchColours":null,
   "swfPrecision":0.5,

@@ -111,7 +111,12 @@ switch(state){
 		//Combo Grounded
 		if(_combo && grounded && !afterCombo){
 			state = "combo";	
-		}	
+		}
+		
+		//Getting hit
+		if (place_meeting(x,y,obj_enemyhitbox)){
+			state = "hit";	
+		}
 	break;
 	
 	case "jumping":
@@ -128,6 +133,11 @@ switch(state){
 		
 		//Go to falling state
 		if (sign(vspd) > 0) state = "falling";	
+		
+		//Getting hit
+		if (place_meeting(x,y,obj_enemyhitbox)){
+			state = "hit";	
+		}
 	break;
 	
 	case "falling":
@@ -147,6 +157,12 @@ switch(state){
 			image_index = 0;
 			state = "free";
 		}
+		
+		//Getting hit
+		if (place_meeting(x,y,obj_enemyhitbox)){
+			state = "hit";	
+		}
+		
 	break;
 	
 	case "dash":
@@ -163,6 +179,11 @@ switch(state){
 	break;
 	
 	case "combo":
+		//Getting hit
+		if (place_meeting(x,y,obj_enemyhitbox)){
+			state = "hit";	
+		}
+	
 		//Preparation
 		image_index = 0;
 	
@@ -210,6 +231,11 @@ switch(state){
 	break;
 	
 	case "wait":
+		//Getting hit
+		if (place_meeting(x,y,obj_enemyhitbox)){
+			state = "hit";	
+		}
+	
 		image_speed = 0.6;
 		
 		//Acceleration and Break
@@ -234,6 +260,23 @@ switch(state){
 		} else {
 		     timer--;
 		}
+	break;
+	
+	case "hit":
+		audio_play_sound(snd_hit, 1, 0); //Play Audio
+		
+		global.player_health -= 5; //Reduce Player Health
+		
+		hspd = 0; //Stop character from moving
+		
+		//Knockback
+		if image_xscale=+1 hspd-=2; 
+		if image_xscale=-1 hspd+=2;
+		
+		//Return to free state
+		timer = 30;
+		lastState = "hit";
+		state = "wait";
 	break;
 }
 

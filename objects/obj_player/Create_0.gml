@@ -94,3 +94,7 @@ headCombo3 = 0;
 hairCombo3 = 0;
 eyesCombo3 = 0;
 clothingCombo3 = 0;
+//character hit
+headHit = 0;
+hairHit = 0;
+clothingHit = 0;

@@ -3,16 +3,16 @@
 
 switch(select){
 	case 0: 
-		select_x = x+(18*4);
-		select_y = y+(4*4);
+		select_x = x+(17*4);
+		select_y = y+(3*4);
 	break;
 	case 1:
-		select_x = x+(62*4);
-		select_y = y+(4*4);
+		select_x = x+(61*4);
+		select_y = y+(3*4);
 	break;
 	case 2:
-		select_x = x+(106*4);
-		select_y = y+(4*4);
+		select_x = x+(105*4);
+		select_y = y+(3*4);
 	break;
 }	
 

@@ -48,6 +48,12 @@ switch(state){
 		draw_sprite_ext(eyesFalling, -1, x, y-5, 1*(charDirection), 1, 0, global.eyesColor, 1);
 	break;
 	
+	case "hit":
+		draw_sprite_ext(headHit, -1, x, y-5, 1*(charDirection), 1, 0, c_white, 1);
+		draw_sprite_ext(hairHit, -1, x, y-5, 1*(charDirection), 1, 0, global.hairColor, 1);
+		draw_sprite_ext(clothingHit, -1, x, y-5, 1*(charDirection), 1, 0, c_white, 1);
+	break;
+	
 	case "wait":
 		if(lastState == "combo"){
 			if(comboCounter == 0){
@@ -66,6 +72,10 @@ switch(state){
 				draw_sprite_ext(clothingCombo3, -1, x, y-5, 1*(charDirection), 1, 0, c_white, 1);
 				draw_sprite_ext(eyesCombo3, -1, x, y-5, 1*(charDirection), 1, 0, global.eyesColor, 1);
 			}
+		} else if(lastState = "hit"){
+			draw_sprite_ext(headHit, -1, x, y-5, 1*(charDirection), 1, 0, c_white, 1);
+			draw_sprite_ext(hairHit, -1, x, y-5, 1*(charDirection), 1, 0, global.hairColor, 1);
+			draw_sprite_ext(clothingHit, -1, x, y-5, 1*(charDirection), 1, 0, c_white, 1);	
 		}
 	break;
 
