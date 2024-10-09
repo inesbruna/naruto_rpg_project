@@ -49,8 +49,8 @@
     "path":"sprites/spr_konohaenemy/spr_konohaenemy.yy",
   },
   "spriteMaskId":{
-    "name":"spr_mask",
-    "path":"sprites/spr_mask/spr_mask.yy",
+    "name":"spr_enemyMask",
+    "path":"sprites/spr_enemyMask/spr_enemyMask.yy",
   },
   "visible":true,
 }

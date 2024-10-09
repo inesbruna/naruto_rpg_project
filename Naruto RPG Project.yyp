@@ -175,6 +175,7 @@
     {"id":{"name":"spr_door","path":"sprites/spr_door/spr_door.yy",},},
     {"id":{"name":"spr_dummy","path":"sprites/spr_dummy/spr_dummy.yy",},},
     {"id":{"name":"spr_enemyhitbox","path":"sprites/spr_enemyhitbox/spr_enemyhitbox.yy",},},
+    {"id":{"name":"spr_enemyMask","path":"sprites/spr_enemyMask/spr_enemyMask.yy",},},
     {"id":{"name":"spr_eyes_combo1","path":"sprites/spr_eyes_combo1/spr_eyes_combo1.yy",},},
     {"id":{"name":"spr_eyes_combo2","path":"sprites/spr_eyes_combo2/spr_eyes_combo2.yy",},},
     {"id":{"name":"spr_eyes_combo3","path":"sprites/spr_eyes_combo3/spr_eyes_combo3.yy",},},

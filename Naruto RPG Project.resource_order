@@ -132,6 +132,7 @@
     {"name":"spr_door","order":3,"path":"sprites/spr_door/spr_door.yy",},
     {"name":"spr_dummy","order":13,"path":"sprites/spr_dummy/spr_dummy.yy",},
     {"name":"spr_enemyhitbox","order":5,"path":"sprites/spr_enemyhitbox/spr_enemyhitbox.yy",},
+    {"name":"spr_enemyMask","order":5,"path":"sprites/spr_enemyMask/spr_enemyMask.yy",},
     {"name":"spr_eyes_combo1","order":3,"path":"sprites/spr_eyes_combo1/spr_eyes_combo1.yy",},
     {"name":"spr_eyes_combo2","order":4,"path":"sprites/spr_eyes_combo2/spr_eyes_combo2.yy",},
     {"name":"spr_eyes_combo3","order":5,"path":"sprites/spr_eyes_combo3/spr_eyes_combo3.yy",},
