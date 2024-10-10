@@ -1,5 +1,6 @@
 /// @description Inserir descrição aqui
 //Inventory
+image_speed = 0.3;
 depth = -99;
 #macro INVENTORY_SLOTS 24 
 rowLength = 4;

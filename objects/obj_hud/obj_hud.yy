@@ -37,7 +37,10 @@
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
   "solid":false,
-  "spriteId":null,
+  "spriteId":{
+    "name":"spr_hud",
+    "path":"sprites/spr_hud/spr_hud.yy",
+  },
   "spriteMaskId":null,
   "visible":true,
 }

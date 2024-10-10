@@ -2,6 +2,15 @@
 // Você pode escrever seu código neste editor
 
 if(room == konoha){
+	tick += 0.01;
+	
+	if(tick == 1){
+		global.player_health += 1;
+		tick = 0;
+	}
+}
+
+if(room == konoha){
 	if(!instance_exists(obj_hud)){
 		instance_create_depth(0,0,-99,obj_hud);	
 	}

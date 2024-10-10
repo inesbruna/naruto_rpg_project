@@ -29,7 +29,7 @@ y = y + vspd;
 if place_meeting(x,y+1,obj_wall){
 	if(!grounded){
 		audio_play_sound(snd_landing, 0, false);
-		instance_create_depth(x, y+30, 9, obj_dust);
+		instance_create_depth(x+9, y-4, 9, obj_dust);
 	}
 	grounded = true;
 	vspd = 0;

@@ -1,5 +1,5 @@
 /// @creation game
-
+tick = 0;
 //player status
 global.player_healthmax = 100;
 global.player_health = global.player_healthmax;

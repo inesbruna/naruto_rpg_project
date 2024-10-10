@@ -6,8 +6,12 @@ draw_healthbar(120, 55, 595, 101, (global.player_health / global.player_healthma
 draw_text(275,70, string(global.player_health) + "/" + string(global.player_healthmax));
 draw_healthbar(700, 1016, 1225, 1044, (global.player_xp/(global.player_level * 100))*100, c_black, c_aqua, c_aqua, 0, true, false);
 draw_sprite_ext(spr_hud, -1, 0, 0, 3, 3, 0, c_white, 1);
+draw_sprite_ext(obj_player.headStance, -1, 50, 375, 6, 6, 0, c_white, 1);
+draw_sprite_ext(obj_player.hairStance, -1, 50, 375, 6, 6, 0, global.hairColor, 1);
+draw_sprite_ext(obj_player.eyesStance, -1, 50, 375, 6, 6, 0, global.eyesColor, 1);
+draw_sprite_part_ext(obj_player.clothingStance, -1, 0, 0, 30, 8, 38, 109, 6, 6, c_white, 1);
 draw_sprite_ext(spr_xpbar, -1, 960, 1030, 3, 3, 0, c_white, 1);
-draw_text(50,155, "Naruto"); //FUTURE PLAYER NAME
+draw_text(50,155, "Player"); //FUTURE PLAYER NAME
 draw_text(50,185, "Level: ");
 draw_text(164,183, global.player_level);
 
