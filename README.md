@@ -15,7 +15,11 @@ Naruto RPG Project is a game from the famous anime Naruto Shippuden in a sidescr
 
 - **Character Creation:** customize your character however you like, with hair and colors.
 
-![Screenshot of the game.](https://i.imgur.com/Ef06tCZ.png)
+**Character Creation**
+![Screenshot of the character creation.](https://i.imgur.com/q7Ji0lo.png)
+
+**Ingame**
+![Screenshot of the game.](https://i.imgur.com/dCqGbHQ.png)
 
 ## **Download**
 ### **Executable**
