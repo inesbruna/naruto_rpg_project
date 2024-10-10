@@ -28,12 +28,12 @@ if (object_exists(obj_player) && !dead){
 				hspd = 0;
 					if(!obj_player.dead){
 						//chase
-						if ((distance_to_object(obj_player) < 100) && (distance_to_object(obj_player) > 3)){ 
+						if ((distance_to_object(obj_player) < 100) && (distance_to_object(obj_player) > 5)){ 
 							state = e_state.chase;
 							sprite_index = spr_anbu_running;
 						}
 						//attack
-						if ((distance_to_object(obj_player) < 3) && canAttack = true && grounded = true){
+						if ((distance_to_object(obj_player) < 6) && canAttack = true && grounded = true){
 							attacking = true;
 							canAttack = false;
 							alarm[1]=120;
@@ -66,7 +66,7 @@ if (object_exists(obj_player) && !dead){
 				}
 				//attack
 					if(!obj_player.dead){
-						if ((distance_to_object(obj_player) < 3) && canAttack = true && grounded = true){
+						if ((distance_to_object(obj_player) < 6) && canAttack = true && grounded = true){
 							attacking = true;
 							canAttack = false;
 							alarm[1]=120;

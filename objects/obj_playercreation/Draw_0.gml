@@ -22,7 +22,7 @@ if(stance){
 		break;
 	}
 	
-	if(animation != 7){
+	if(animation != 7 && animation != 8){
 		draw_sprite_ext(eyesAnimation, -1, x, y, 6, 6, 0, eyesColor, 1);
 	}
 	

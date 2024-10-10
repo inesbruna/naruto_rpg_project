@@ -1,7 +1,7 @@
-if(animation > 7){
+if(animation > 9){
 	animation = 0;	
 } else if (animation < 0) {
-	animation = 7;	
+	animation = 9;	
 }
 
 image_index = image;
@@ -77,5 +77,22 @@ switch(animation){
 	hair2Animation = spr_hair2_hit;
 	hair3Animation = spr_hair3_hit;
 	clothingAnimation = spr_clothing0_hit;
+	break;
+		case 8:	
+	headAnimation = spr_head_dead;
+	hair0Animation = spr_hair0_dead;
+	hair1Animation = spr_hair1_dead;
+	hair2Animation = spr_hair2_dead;
+	hair3Animation = spr_hair3_dead;
+	clothingAnimation = spr_clothing0_dead;
+	break;
+		case 9:	
+	headAnimation = spr_head_defense;
+	hair0Animation = spr_hair0_defense;
+	hair1Animation = spr_hair1_defense;
+	hair2Animation = spr_hair2_defense;
+	hair3Animation = spr_hair3_defense;
+	clothingAnimation = spr_clothing0_defense;
+	eyesAnimation = spr_eyes_defense;
 	break;
 }

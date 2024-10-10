@@ -7,6 +7,6 @@ gpu_set_fog(false, c_black, 0, 0);
 
 draw_self();
 
-if(place_meeting(x, y, obj_playerParent)){
+if(place_meeting(x, y, obj_player)){
 	draw_sprite(spr_actionWarning, -1, x-30, y-70);	
 }

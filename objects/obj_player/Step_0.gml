@@ -44,8 +44,22 @@ if(place_meeting(x+hspd, y, obj_wall)){
 	}   
 x = x + hspd; 
 
-//Character Acceleration for Dashes
-if(state = "combo" || state = "dash"){
+//Health Control
+if(global.player_health < 0){
+	global.player_health = 0;	
+} else if (global.player_health > global.player_healthmax){
+	global.player_health = global.player_healthmax;	
+}
+
+//Chakra Control
+if(global.player_chakra < 0){
+	global.player_chakra = 0;	
+} else if (global.player_chakra > global.player_chakramax){
+	global.player_chakra = global.player_chakramax;	
+}
+
+//Character Acceleration for Dashes and Knockups
+if(state = "combo" || state = "dash" || state = "hit" || state = "defense"){
 	//Acceleration and Break
 	if hspd<0{
 	hspd+=0.2
@@ -90,23 +104,31 @@ switch(state){
 		
 		//Dash First Press
 		if (keyboard_check_released(ord("A"))) && grounded && !dashTimer{ //left
-			charDirection = -1;	
 			dashTimer = true;
+			lastPress = "A";
 			alarm[6] = 10; //Timer to press again
 		}
 		if (keyboard_check_released(ord("D"))) && grounded && !dashTimer{ //right
-			charDirection = 1;
 			dashTimer = true;
+			lastPress = "D";
 			alarm[6] = 10; //Timer to press again
 		}
 		
+		if(dashTimer = true && lastPress = "D"){
+			if(keyboard_check_pressed(ord("A"))){
+				dashTimer = false;	
+			}
+		} else if(dashTimer = true && lastPress = "A"){
+			if(keyboard_check_pressed(ord("D"))){
+				dashTimer = false;	
+			}		
+		}
+		
 		//Dash Second Press
-		if ((keyboard_check_pressed(ord("A"))) && grounded && !dashCooldown && dashTimer && charDirection = -1){ //left
+		if (((keyboard_check_pressed(ord("A"))) || (keyboard_check_pressed(ord("D")))) && grounded && !dashCooldown && dashTimer){ //left
 			state = "dash";
 		}
-		if ((keyboard_check_pressed(ord("D"))) && !dashCooldown && grounded && dashTimer && charDirection = 1){ //right
-			state = "dash";
-		}
+
 		
 		//Combo Grounded
 		if(_combo && grounded && !afterCombo){
@@ -117,6 +139,19 @@ switch(state){
 		if (place_meeting(x,y,obj_enemyhitbox)){
 			state = "hit";	
 		}
+		
+		//Dead
+		if (global.player_health <= 0){
+			state = "dead";	
+			image_index = 0;
+		}
+	
+		//Defense
+		if (keyboard_check(ord("K"))){
+			state = "defense";	
+			hspd = 0; //Stop character from moving
+		}
+		
 	break;
 	
 	case "jumping":
@@ -168,8 +203,8 @@ switch(state){
 	case "dash":
 		audio_play_sound(snd_dash, 0, false);
 		vspd = vspd - 3;	
-		if image_xscale=+1 hspd = hspd + 1;
-		if image_xscale=-1 hspd = hspd - 1;
+		if lastPress = "A" hspd = hspd - 2;
+		if lastPress = "D" hspd = hspd + 2;
 		
 		dashCooldown = true;
 		alarm[5] = 15;
@@ -181,7 +216,8 @@ switch(state){
 	case "combo":
 		//Getting hit
 		if (place_meeting(x,y,obj_enemyhitbox)){
-			state = "hit";	
+			state = "hit";
+			global.player_health -= 5; //Reduce Player Health
 		}
 	
 		//Preparation
@@ -265,18 +301,46 @@ switch(state){
 	case "hit":
 		audio_play_sound(snd_hit, 1, 0); //Play Audio
 		
-		global.player_health -= 5; //Reduce Player Health
+		//Getting hit
+		if (place_meeting(x,y,obj_enemyhitbox)){
+			global.player_health -= 5; //Reduce Player Health
+		}
 		
 		hspd = 0; //Stop character from moving
 		
 		//Knockback
-		if image_xscale=+1 hspd-=2; 
-		if image_xscale=-1 hspd+=2;
+		if(place_meeting(x,y,obj_enemyhitbox)){
+			if obj_enemyhitbox.image_xscale=+1 hspd+=2; 
+			if obj_enemyhitbox.image_xscale=-1 hspd-=2;
+		}
 		
 		//Return to free state
 		timer = 30;
 		lastState = "hit";
 		state = "wait";
+	break;
+	
+	case "dead":
+		hspd = 0; //Stop character from moving
+		
+		//Stop at last frame
+		if(image_index > image_number-1){
+			image_index = 3;	
+		}
+	break;
+	
+	case "defense":
+		
+		if(place_meeting(x,y,obj_enemyhitbox)){
+			//Knockback
+			if obj_enemyhitbox.image_xscale=+1 hspd+=1; 
+			if obj_enemyhitbox.image_xscale=-1 hspd-=1;
+		}
+		
+		if(keyboard_check_released(ord("K"))){
+			state = "free";	
+		}
+		
 	break;
 }
 

@@ -54,6 +54,19 @@ switch(state){
 		draw_sprite_ext(clothingHit, -1, x, y-5, 1*(charDirection), 1, 0, c_white, 1);
 	break;
 	
+	case "dead":
+		draw_sprite_ext(headDead, -1, x, y-5, 1*(charDirection), 1, 0, c_white, 1);
+		draw_sprite_ext(hairDead, -1, x, y-5, 1*(charDirection), 1, 0, global.hairColor, 1);
+		draw_sprite_ext(clothingDead, -1, x, y-5, 1*(charDirection), 1, 0, c_white, 1);
+	break;
+	
+	case "defense":
+		draw_sprite_ext(headDefense, -1, x, y-5, 1*(charDirection), 1, 0, c_white, 1);
+		draw_sprite_ext(hairDefense, -1, x, y-5, 1*(charDirection), 1, 0, global.hairColor, 1);
+		draw_sprite_ext(clothingDefense, -1, x, y-5, 1*(charDirection), 1, 0, c_white, 1);
+		draw_sprite_ext(eyesDefense, -1, x, y-5, 1*(charDirection), 1, 0, global.eyesColor, 1);
+	break
+	
 	case "wait":
 		if(lastState == "combo"){
 			if(comboCounter == 0){

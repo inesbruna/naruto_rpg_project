@@ -1,5 +1,16 @@
-/// @description Inserir descrição aqui
-// Você pode escrever seu código neste editor 
+draw_set_font(fnt_player_name);
+
+//healthbar e chakrabar
+draw_healthbar(135, 105, 575, 146, global.player_chakra, c_black, c_blue, c_blue, 0, true, false);
+draw_healthbar(120, 55, 595, 101, (global.player_health / global.player_healthmax) * 100, c_black, c_red, c_green, 0, true, false);
+draw_text(275,70, string(global.player_health) + "/" + string(global.player_healthmax));
+draw_healthbar(700, 1016, 1225, 1044, (global.player_xp/(global.player_level * 100))*100, c_black, c_aqua, c_aqua, 0, true, false);
+draw_sprite_ext(spr_hud, -1, 0, 0, 3, 3, 0, c_white, 1);
+draw_sprite_ext(spr_xpbar, -1, 960, 1030, 3, 3, 0, c_white, 1);
+draw_text(50,155, "Naruto"); //FUTURE PLAYER NAME
+draw_text(50,185, "Level: ");
+draw_text(164,183, global.player_level);
+
 //menu
 if(open_menu){
 	draw_sprite_ext(spr_menu, -1, 500, 200, 3, 3, 0, c_white, 1);
@@ -35,23 +46,7 @@ if(open_inventory){
 	}
 }
 
-draw_text(1000, 200, "Quests em andamento");
-if(quest[0] != noone){
-	draw_text(1000, 250, quest[0]);
+if(global.player_health <= 0){
+	draw_text(300,600,"You died, press enter to respawn.");
 }
 
-if(quest[1] != noone){
-	draw_text(1000, 300, quest[1]);
-}
-
-if(quest[2] != noone){
-	draw_text(1000, 350, quest[2]);
-}
-
-if(quest[3] != noone){
-	draw_text(1000, 400, quest[3]);
-}
-
-if(quest[4] != noone){
-	draw_text(1000, 450, quest[4]);
-}

@@ -12,6 +12,8 @@ function scr_character(){
 		headCombo2 = spr_head_combo2;
 		headCombo3 = spr_head_combo3;
 		headHit = spr_head_hit;
+		headDead = spr_head_dead;
+		headDefense = spr_head_defense;
 		break;
 	}
 	
@@ -25,6 +27,8 @@ function scr_character(){
 		hairCombo2 = spr_hair0_combo2;
 		hairCombo3 = spr_hair0_combo3;
 		hairHit = spr_hair0_hit;
+		hairDead = spr_hair0_dead;
+		hairDefense = spr_hair0_defense;
 		break;
 		case 1: 
 		hairStance = spr_hair1_stance;
@@ -35,6 +39,8 @@ function scr_character(){
 		hairCombo2 = spr_hair1_combo2;
 		hairCombo3 = spr_hair1_combo3;
 		hairHit = spr_hair1_hit;
+		hairDead = spr_hair1_dead;
+		hairDefense = spr_hair1_defense;
 		break;
 		case 2: 
 		hairStance = spr_hair2_stance;
@@ -45,6 +51,8 @@ function scr_character(){
 		hairCombo2 = spr_hair2_combo2;
 		hairCombo3 = spr_hair2_combo3;
 		hairHit = spr_hair2_hit;
+		hairDead = spr_hair2_dead;
+		hairDefense = spr_hair2_defense;
 		break;
 		case 3: 
 		hairStance = spr_hair3_stance;
@@ -55,6 +63,8 @@ function scr_character(){
 		hairCombo2 = spr_hair3_combo2;
 		hairCombo3 = spr_hair3_combo3;
 		hairHit = spr_hair3_hit;
+		hairDead = spr_hair3_dead;
+		hairDefense = spr_hair3_defense;
 		break;
 	}
 	
@@ -68,6 +78,8 @@ function scr_character(){
 		clothingCombo2 = spr_clothing0_combo2;
 		clothingCombo3 = spr_clothing0_combo3;
 		clothingHit = spr_clothing0_hit;
+		clothingDead = spr_clothing0_dead;
+		clothingDefense = spr_clothing0_defense;
 		break;
 	}
 	
@@ -78,5 +90,6 @@ function scr_character(){
 	eyesCombo1 = spr_eyes_combo1;
 	eyesCombo2 = spr_eyes_combo2;
 	eyesCombo3 = spr_eyes_combo3;
+	eyesDefense = spr_eyes_defense;
 		
 }

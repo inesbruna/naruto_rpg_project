@@ -34,6 +34,7 @@ endAction = true;
 
 //----------Dash Triggers----------
 charDirection = 1;
+lastPress = "";
 dashTimer = false;
 dashCooldown = false;
 
@@ -98,3 +99,12 @@ clothingCombo3 = 0;
 headHit = 0;
 hairHit = 0;
 clothingHit = 0;
+//character dead
+headDead = 0;
+hairDead = 0;
+clothingDead = 0;
+//character defense
+headDefense = 0;
+hairDefense = 0;
+eyesDefense = 0;
+clothingDefense = 0;
