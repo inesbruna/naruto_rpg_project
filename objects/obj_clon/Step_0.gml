@@ -190,10 +190,11 @@ switch(state){
 	break;
 	
 	case "dead":
-		instance_create_depth(x, y, 9, obj_smoke);
 		hp = 0;
 		hspd = 0;
 		if (image_index >= image_number - image_speed){
+			instance_create_depth(x, y, 9, obj_smoke);
+			audio_play_sound(snd_smoke, 0, false);
 			instance_destroy();
 		}
 	break;

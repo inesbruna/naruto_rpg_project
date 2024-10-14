@@ -1,16 +1,16 @@
 {
   "$GMObject":"",
-  "%Name":"obj_textbox",
+  "%Name":"obj_log",
   "eventList":[
-    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
-    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":64,"eventType":8,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
+    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
+    {"$GMEvent":"v1","%Name":"","collisionObjectId":{"name":"obj_wall","path":"objects/obj_wall/obj_wall.yy",},"eventNum":0,"eventType":4,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
-  "name":"obj_textbox",
+  "name":"obj_log",
   "overriddenProperties":[],
   "parent":{
-    "name":"control",
-    "path":"folders/Objetos/control.yy",
+    "name":"player",
+    "path":"folders/Objetos/player.yy",
   },
   "parentObjectId":null,
   "persistent":false,
@@ -30,7 +30,10 @@
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
   "solid":false,
-  "spriteId":null,
+  "spriteId":{
+    "name":"spr_log",
+    "path":"sprites/spr_log/spr_log.yy",
+  },
   "spriteMaskId":null,
   "visible":true,
 }
