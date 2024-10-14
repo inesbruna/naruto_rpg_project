@@ -15,10 +15,3 @@ stack = array_create(INVENTORY_SLOTS, 0);
 //menu-inventory
 open_menu = false;
 open_inventory = false;
-
-//quests
-quest[0] = noone;
-quest[1] = noone;
-quest[2] = noone;
-quest[3] = noone;
-quest[4] = noone;

@@ -1,5 +1,4 @@
-/// @description Inserir descrição aqui
-// Você pode escrever seu código neste editor
+/// @description State Machine
 //gravity
 vspd = vspd + grv;
 
@@ -20,20 +19,20 @@ if(place_meeting(x+hspd, y, obj_wall)){
 	}                
 x = x + hspd;
 
-if (object_exists(obj_player) && !dead){
+if (object_exists(obj_playerParent) && !dead){
 	switch(state){
-		case e_state.idle:
+		case "free":
 		{
 			if(!hitting){
 				hspd = 0;
-					if(!obj_player.dead){
+					if(!(obj_playerParent.state = "dead")){
 						//chase
-						if ((distance_to_object(obj_player) < 100) && (distance_to_object(obj_player) > 3)){ 
-							state = e_state.chase;
+						if ((distance_to_object(obj_playerParent) < 100) && (distance_to_object(obj_playerParent) > 8)){ 
+							state = "chase";
 							sprite_index = spr_konohaenemy_running;
 						}
 						//attack
-						if ((distance_to_object(obj_player) < 3) && canAttack = true && grounded = true){
+						if ((distance_to_object(obj_playerParent) < 10) && canAttack = true && grounded = true){
 							attacking = true;
 							canAttack = false;
 							alarm[1]=120;
@@ -45,7 +44,7 @@ if (object_exists(obj_player) && !dead){
 							_hitbox.konohaenemy = self;
 							_hitbox.image_xscale = image_xscale;
 							//change state to attack
-							state = e_state.attack;
+							state = "attack";
 							sprite_index = spr_konohaenemy_attack;
 						}
 					}
@@ -53,54 +52,64 @@ if (object_exists(obj_player) && !dead){
 		}
 		break;
 	
-		case e_state.chase:
+		case "chase":
 		{
 			if(!hitting){
 				if (hspd != 0) image_xscale = sign(hspd);
-				vir = sign(obj_player.x - x);
+				vir = sign(obj_playerParent.x - x);
 				hspd = vir * 2;
 				//idle
-				if ((distance_to_object(obj_player) > 100)){
-					state = e_state.idle;
+				if ((distance_to_object(obj_playerParent) > 100)){
+					hspd = 0;
+					state = "free";
 					sprite_index = spr_konohaenemy;
 				}
 				//attack
-					if(!obj_player.dead){
-						if ((distance_to_object(obj_player) < 3) && canAttack = true && grounded = true){
+					if(!(obj_playerParent.state = "dead")){
+						if ((distance_to_object(obj_playerParent) < 10) && canAttack = true && grounded = true){
 							attacking = true;
 							canAttack = false;
 							alarm[1]=120;
 							hspd = 0;
+							if image_xscale=+1 hspd+=2;
+							if image_xscale=-1 hspd-=2;
 							//create hitbox
 							var _hitbox = instance_create_depth(x, y, depth, obj_enemyhitbox);
 							_hitbox.konohaenemy = self;
 							_hitbox.image_xscale = image_xscale;
 							//change state to attack
-							state = e_state.attack;
+							state = "attack";
 							sprite_index = spr_konohaenemy_attack;
 						}
 					}
+				//idle
+				if ((distance_to_object(obj_playerParent) < 8)){
+					hspd = 0;
+					state = "free";
+					sprite_index = spr_konohaenemy;
+				}
 			} 
 		}
 		break;
 	
-		case e_state.attack:
+		case "attack":
 		{
 			if(!hitting){
 				if(image_index >= 3 - image_speed){
 					attacking = false;
-					state = e_state.idle;
+					hspd = 0;
+					state = "free";
 					sprite_index = spr_konohaenemy;
 				}	
 			}
 		}
 		break;
 	
-		case e_state.hit: //apanhando
+		case "hit": //apanhando
 		{
 			if(hitting = false){
 				hspd = 0;
-				state = e_state.idle;
+				state = "free";
 				sprite_index = spr_konohaenemy;
 			}
 		}

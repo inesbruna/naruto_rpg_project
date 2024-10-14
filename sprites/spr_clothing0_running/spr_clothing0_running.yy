@@ -28,7 +28,7 @@
   ],
   "name":"spr_clothing0_running",
   "nineSlice":null,
-  "origin":9,
+  "origin":7,
   "parent":{
     "name":"clothing0",
     "path":"folders/Sprites/Player/clothing0.yy",
@@ -95,7 +95,7 @@
     ],
     "visibleRange":null,
     "volume":1.0,
-    "xorigin":9,
+    "xorigin":31,
     "yorigin":42,
   },
   "swatchColours":null,

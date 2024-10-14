@@ -16,4 +16,4 @@ dead = false;
 hp = 200;
 hpmax = 200;
 
-state = e_state.idle;
+state = "free";

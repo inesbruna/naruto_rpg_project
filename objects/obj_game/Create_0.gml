@@ -17,16 +17,6 @@ global.clothing = 0;
 global.hairColor = 0;
 global.eyesColor = 0;
 
-
-
-//states enemy
-enum e_state{
-	idle,
-	chase,
-	attack,
-	hit,
-}
-
 //struct items
 s_items = {
 	//equipáveis

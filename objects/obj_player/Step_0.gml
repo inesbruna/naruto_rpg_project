@@ -4,13 +4,17 @@
 scr_character();
 
 //Keyboard functions
-var	_left = keyboard_check(ord("A"));
-var _right = keyboard_check(ord("D"));
-var _jump = keyboard_check(ord("W"));
-var _combo = keyboard_check(ord("J"));
-var _charge = keyboard_check(ord("L"));
-var _transform = keyboard_check_pressed(ord("1"));
-var _skill1 = keyboard_check_pressed(ord("U"));
+var	_left = keyboard_check(vk_left);
+var _right = keyboard_check(vk_right);
+var _jump = keyboard_check(vk_up);
+var _combo = keyboard_check(ord("A"));
+var _throw = keyboard_check(ord("X"));
+var _defense = keyboard_check(ord("S"));
+var _charge = keyboard_check(ord("D"));
+var _transform = keyboard_check_pressed(ord("C"));
+var _skill1 = keyboard_check_pressed(ord("Q"));
+var _skill2 = keyboard_check_pressed(ord("W"));
+var _skill3 = keyboard_check_pressed(ord("E"));
 var _pickup = keyboard_check_pressed(ord("Z"));
 
 //Gravity
@@ -79,7 +83,8 @@ if(state = "combo" || state = "dash" || state = "hit" || state = "defense"){
 }
 
 switch(state){
-	case "free":	
+	case "free":
+	
 		//Movement
 		move = _right - _left;
 		hspd = move * 4;
@@ -103,29 +108,29 @@ switch(state){
 		if (sign(vspd) > 0) state = "falling";
 		
 		//Dash First Press
-		if (keyboard_check_released(ord("A"))) && grounded && !dashTimer{ //left
+		if (keyboard_check_released(vk_left)) && grounded && !dashTimer{ //left
 			dashTimer = true;
 			lastPress = "A";
 			alarm[6] = 10; //Timer to press again
 		}
-		if (keyboard_check_released(ord("D"))) && grounded && !dashTimer{ //right
+		if (keyboard_check_released(vk_right)) && grounded && !dashTimer{ //right
 			dashTimer = true;
 			lastPress = "D";
 			alarm[6] = 10; //Timer to press again
 		}
 		
 		if(dashTimer = true && lastPress = "D"){
-			if(keyboard_check_pressed(ord("A"))){
+			if(keyboard_check_pressed(vk_left)){
 				dashTimer = false;	
 			}
 		} else if(dashTimer = true && lastPress = "A"){
-			if(keyboard_check_pressed(ord("D"))){
+			if(keyboard_check_pressed(vk_right)){
 				dashTimer = false;	
 			}		
 		}
 		
 		//Dash Second Press
-		if (((keyboard_check_pressed(ord("A"))) || (keyboard_check_pressed(ord("D")))) && grounded && !dashCooldown && dashTimer){ //left
+		if (((_left) || (_right)) && grounded && !dashCooldown && dashTimer){ //left
 			state = "dash";
 		}
 
@@ -147,9 +152,45 @@ switch(state){
 		}
 	
 		//Defense
-		if (keyboard_check(ord("K"))){
+		if (_defense){
 			state = "defense";	
 			hspd = 0; //Stop character from moving
+		}
+		
+		//Pick up
+		if (place_meeting(x, y, obj_items) && _pickup){
+			state = "pickup";	
+		}
+		
+		//Charging Chakra
+		if (_charge){
+			state = "charge";	
+		}
+		
+		//Throw itens
+		if (_throw && !throwCooldown){
+			hspd = 0;
+			throwCooldown = true;
+			alarm[0] = 120;
+			instance_create_depth(x+20, y-45, 99, obj_kunai);
+			obj_kunai.image_xscale = charDirection;
+			audio_play_sound(snd_slash, 0, false);
+			lastState = "throw";
+			timer = 10;
+			state = "wait";
+		}
+		
+		//Skill 1
+		if (_skill1){
+			if(!instance_exists(obj_clon) && global.player_chakra >= 30){
+				hspd = 0;
+				instance_create_depth(x-30, y, 99, obj_clon);
+				instance_create_depth(x-30, y, 9, obj_smoke);
+				global.player_chakra -= 30;
+				lastState = "clon";
+				timer = 25;
+				state = "wait";
+			}
 		}
 		
 	break;
@@ -231,17 +272,17 @@ switch(state){
 		if charDirection=-1 hspd-=2;
 	  
 		//Create Hitbox
-		var _hitbox = instance_create_depth(x, y, depth, obj_narutohitbox);
+		var _hitbox = instance_create_depth(x, y-30, depth, obj_narutohitbox);
 		_hitbox.player = self;
-		_hitbox.image_xscale = image_xscale;
+		_hitbox.image_xscale = charDirection;
 	
 		//Start Combo
 		if(comboCounter == 0){
 			nextCombo = true;
 			comboCounter = 1;
 			audio_play_sound(snd_combo1, 1, 0);
-			alarm[2] = 60;
-			timer = 30;
+			alarm[2] = 45;
+			timer = 24;
 			lastState = "combo";
 			state = "wait";
 			
@@ -249,17 +290,17 @@ switch(state){
 			nextCombo = true;
 			comboCounter = 2;
 			audio_play_sound(snd_combo2, 1, 0);
-			alarm[2] = 60;
-			timer = 30;
+			alarm[2] = 45;
+			timer = 24;
 			lastState = "combo";
 			state = "wait";
 			
 		} else if (comboCounter == 2) {
-			nextCombo = true;
+			afterCombo = true;
 			comboCounter = 0;
 			audio_play_sound(snd_combo3, 1, 0);
 			alarm[3] = 60;
-			timer = 30;
+			timer = 24;
 			lastState = "combo";
 			state = "wait";
 		}
@@ -271,8 +312,6 @@ switch(state){
 		if (place_meeting(x,y,obj_enemyhitbox)){
 			state = "hit";	
 		}
-	
-		image_speed = 0.6;
 		
 		//Acceleration and Break
 		if hspd<0{
@@ -337,11 +376,28 @@ switch(state){
 			if obj_enemyhitbox.image_xscale=-1 hspd-=1;
 		}
 		
-		if(keyboard_check_released(ord("K"))){
+		if(keyboard_check_released(ord("S"))){
 			state = "free";	
 		}
 		
 	break;
+	
+	case "pickup":
+		hspd = 0;
+		audio_play_sound(snd_item, 1, 0); //Play Audio
+		lastState = "pickup";
+		timer = 15;
+		state = "wait";
+	break;
+	
+	case "charge":
+		hspd = 0;
+		global.player_chakra += 0.5;
+		if(keyboard_check_released(ord("D"))){
+			state = "free";	
+		}
+	break;
+	
 }
 
 

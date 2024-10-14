@@ -1,4 +1,4 @@
-var accept_key = keyboard_check_pressed(vk_enter);
+var accept_key = keyboard_check_pressed(ord("Z"));
 
 var textbox_x = 400;
 var textbox_y = 600;

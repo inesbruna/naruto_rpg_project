@@ -25,7 +25,7 @@
   ],
   "name":"spr_konohaenemy_attack",
   "nineSlice":null,
-  "origin":4,
+  "origin":9,
   "parent":{
     "name":"Leaf Village",
     "path":"folders/Sprites/Anbu/Leaf Village.yy",
@@ -84,7 +84,7 @@
     "visibleRange":null,
     "volume":1.0,
     "xorigin":29,
-    "yorigin":28,
+    "yorigin":31,
   },
   "swatchColours":null,
   "swfPrecision":0.5,

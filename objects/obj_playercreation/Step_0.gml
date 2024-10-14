@@ -1,7 +1,7 @@
-if(animation > 9){
+if(animation > 12){
 	animation = 0;	
 } else if (animation < 0) {
-	animation = 9;	
+	animation = 12;	
 }
 
 image_index = image;
@@ -94,5 +94,32 @@ switch(animation){
 	hair3Animation = spr_hair3_defense;
 	clothingAnimation = spr_clothing0_defense;
 	eyesAnimation = spr_eyes_defense;
+	break;
+		case 10:	
+	headAnimation = spr_head_pickup;
+	hair0Animation = spr_hair0_pickup;
+	hair1Animation = spr_hair1_pickup;
+	hair2Animation = spr_hair2_pickup;
+	hair3Animation = spr_hair3_pickup;
+	clothingAnimation = spr_clothing0_pickup;
+	eyesAnimation = spr_eyes_pickup;
+	break;
+		case 11:	
+	headAnimation = spr_head_chargingChakra;
+	hair0Animation = spr_hair0_chargingChakra;
+	hair1Animation = spr_hair1_chargingChakra;
+	hair2Animation = spr_hair2_chargingChakra;
+	hair3Animation = spr_hair3_chargingChakra;
+	clothingAnimation = spr_clothing0_chargingChakra;
+	eyesAnimation = spr_eyes_chargingChakra;
+	break;
+		case 12:	
+	headAnimation = spr_head_throw;
+	hair0Animation = spr_hair0_throw;
+	hair1Animation = spr_hair1_throw;
+	hair2Animation = spr_hair2_throw;
+	hair3Animation = spr_hair3_throw;
+	clothingAnimation = spr_clothing0_throw;
+	eyesAnimation = spr_eyes_throw;
 	break;
 }

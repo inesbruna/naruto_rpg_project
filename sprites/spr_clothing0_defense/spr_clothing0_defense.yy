@@ -23,7 +23,7 @@
   ],
   "name":"spr_clothing0_defense",
   "nineSlice":null,
-  "origin":6,
+  "origin":9,
   "parent":{
     "name":"clothing0",
     "path":"folders/Sprites/Player/clothing0.yy",
@@ -75,7 +75,7 @@
     ],
     "visibleRange":null,
     "volume":1.0,
-    "xorigin":0,
+    "xorigin":20,
     "yorigin":40,
   },
   "swatchColours":null,

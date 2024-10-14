@@ -4,9 +4,6 @@
 state = "free";
 lastState = "";
 
-//----------animation speed----------
-image_speed = 0.3;
-
 //----------Triggers----------
 
 transformation = 0;
@@ -19,18 +16,12 @@ afterCombo = false; //Cooldown to make a combo again
 
 timer = 0;
 
-hitting = false;
-
-dead = false;
-
-defense = false;
+throwCooldown = false;
 
 skill1 = false;
 usingSkill1 = false;
 
 chargingchakra = false;
-
-endAction = true;
 
 //----------Dash Triggers----------
 charDirection = 1;
@@ -108,3 +99,18 @@ headDefense = 0;
 hairDefense = 0;
 eyesDefense = 0;
 clothingDefense = 0;
+//character defense
+headPickup = 0;
+hairPickup = 0;
+eyesPickup = 0;
+clothingPickup = 0;
+//character defense
+headChargingChakra = 0;
+hairChargingChakra = 0;
+eyesChargingChakra = 0;
+clothingChargingChakra = 0;
+//character defense
+headThrow = 0;
+hairThrow = 0;
+eyesThrow = 0;
+clothingThrow = 0;

@@ -28,7 +28,7 @@
   ],
   "name":"spr_konohaenemy_running",
   "nineSlice":null,
-  "origin":4,
+  "origin":9,
   "parent":{
     "name":"Leaf Village",
     "path":"folders/Sprites/Anbu/Leaf Village.yy",
@@ -96,7 +96,7 @@
     "visibleRange":null,
     "volume":1.0,
     "xorigin":30,
-    "yorigin":20,
+    "yorigin":19,
   },
   "swatchColours":null,
   "swfPrecision":0.5,
