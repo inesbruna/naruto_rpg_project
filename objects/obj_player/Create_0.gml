@@ -1,8 +1,14 @@
 /// @description SET CONFIG
 
-//----------state----------
+//----------State----------
 state = "free";
 lastState = "";
+
+//----------Animation---------
+total_frames = 0;
+img_frame = 0;
+img_index = 0;
+img_speed = 8;
 
 //----------Triggers----------
 
@@ -22,6 +28,7 @@ substitutionCooldown = false;
 skill1_cooldown = false;
 skill2_cooldown = false;
 skill3_cooldown = false;
+skill4_cooldown = false;
 
 skill1 = false;
 usingSkill1 = false;
@@ -89,18 +96,28 @@ headDefense = 0;
 hairDefense = 0;
 eyesDefense = 0;
 clothingDefense = 0;
-//character defense
+//character pickup
 headPickup = 0;
 hairPickup = 0;
 eyesPickup = 0;
 clothingPickup = 0;
-//character defense
+//character charge
 headChargingChakra = 0;
 hairChargingChakra = 0;
 eyesChargingChakra = 0;
 clothingChargingChakra = 0;
-//character defense
+//character throw
 headThrow = 0;
 hairThrow = 0;
 eyesThrow = 0;
 clothingThrow = 0;
+//character jutsu spit
+headJutsuSpit = 0;
+hairJutsuSpit = 0;
+eyesJutsuSpit = 0;
+clothingJutsuSpit = 0;
+//character jump jutsu spit
+headJumpJutsuSpit = 0;
+hairJumpJutsuSpit = 0;
+eyesJumpJutsuSpit = 0;
+clothingJumpJutsuSpit = 0;

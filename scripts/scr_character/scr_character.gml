@@ -17,6 +17,8 @@ function scr_character(){
 		headPickup = spr_head_down;
 		headChargingChakra = spr_head_chargingChakra;
 		headThrow = spr_head_throw;
+		headJutsuSpit = spr_head_jutsuSpit;
+		headJumpJutsuSpit = spr_head_jumpJutsuSpit;
 		break;
 	}
 	
@@ -35,6 +37,8 @@ function scr_character(){
 		hairPickup = spr_hair0_down;
 		hairChargingChakra = spr_hair0_chargingChakra;
 		hairThrow = spr_hair0_throw;
+		hairJutsuSpit = spr_hair0_jutsuSpit;
+		hairJumpJutsuSpit = spr_hair0_jumpJutsuSpit;
 		break;
 		case 1: 
 		hairStance = spr_hair1_stance;
@@ -50,6 +54,8 @@ function scr_character(){
 		hairPickup = spr_hair1_down;
 		hairChargingChakra = spr_hair1_chargingChakra;
 		hairThrow = spr_hair1_throw;
+		hairJutsuSpit = spr_hair1_jutsuSpit;
+		hairJumpJutsuSpit = spr_hair1_jumpJutsuSpit;
 		break;
 		case 2: 
 		hairStance = spr_hair2_stance;
@@ -65,6 +71,8 @@ function scr_character(){
 		hairPickup = spr_hair2_down;
 		hairChargingChakra = spr_hair2_chargingChakra;
 		hairThrow = spr_hair2_throw;
+		hairJutsuSpit = spr_hair2_jutsuSpit;
+		hairJumpJutsuSpit = spr_hair2_jumpJutsuSpit;
 		break;
 		case 3: 
 		hairStance = spr_hair3_stance;
@@ -80,6 +88,8 @@ function scr_character(){
 		hairPickup = spr_hair3_down;
 		hairChargingChakra = spr_hair3_chargingChakra;
 		hairThrow = spr_hair3_throw;
+		hairJutsuSpit = spr_hair3_jutsuSpit;
+		hairJumpJutsuSpit = spr_hair3_jumpJutsuSpit;
 		break;
 	}
 	
@@ -98,6 +108,8 @@ function scr_character(){
 		clothingPickup = spr_clothing0_down;
 		clothingChargingChakra = spr_clothing0_chargingChakra;
 		clothingThrow = spr_clothing0_throw;
+		clothingJutsuSpit = spr_clothing0_jutsuSpit;
+		clothingJumpJutsuSpit = spr_clothing0_jumpJutsuSpit;
 		break;
 	}
 	
@@ -112,5 +124,6 @@ function scr_character(){
 	eyesPickup = spr_eyes_down;
 	eyesChargingChakra = spr_eyes_chargingChakra;
 	eyesThrow = spr_eyes_throw;
-		
+	eyesJutsuSpit = spr_eyes_jutsuSpit;
+	eyesJumpJutsuSpit = spr_eyes_jumpJutsuSpit;	
 }

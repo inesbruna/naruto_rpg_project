@@ -7,7 +7,7 @@ if (self = obj_anbu){
 }
 
 
-hp -= global.player_intelligence/6;
+hp -= global.player_intelligence/5;
 endAction = false;
 alarm[1] = 30;
 

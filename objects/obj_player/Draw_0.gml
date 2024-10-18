@@ -1,129 +1,206 @@
 /// @description Animations
+//Set Speed
+if(state == "wait" && lastState == "combo"){
+	img_speed = 7;	
+} else {
+	img_speed = 8;	
+}
 
-/*if(grounded){
-	gpu_set_fog(true, c_black, 0, 1);
-	draw_sprite_pos(sprite_index, image_index, x-(sprite_width/2)-5, y+42, x+(sprite_width/2)-5, y+42, x+(sprite_width/2), y+26, x-(sprite_width/2), y+26, .5);
-	gpu_set_fog(false, c_black, 0, 0);
-}*/
+// Get image_number
+switch (state){
+	case "free":
+		if ((keyboard_check(vk_left)) || ((keyboard_check(vk_right))) && grounded){
+			total_frames = sprite_get_number(headRunning);
+		} else {
+			total_frames = sprite_get_number(headStance);
+		}
+	break;
+	
+	case "jumping":
+		total_frames = sprite_get_number(headJumping);
+	break;
+	
+	case "falling":
+		total_frames = sprite_get_number(headFalling);
+	break;
+	
+	case "hit":
+		total_frames = sprite_get_number(headHit);
+	break;
+	
+	case "dead":
+		total_frames = sprite_get_number(headDead);
+	break;
+	
+	case "defense":
+		total_frames = sprite_get_number(headDefense);
+	break;
+		
+	case "charge":
+		total_frames = sprite_get_number(headChargingChakra);
+	break;
+	
+	case "wait":
+		switch(lastState){
+			case "combo":
+				if(comboCounter == 1){
+					total_frames = sprite_get_number(headCombo1);
+				} else if (comboCounter == 2){
+					total_frames = sprite_get_number(headCombo2);
+				} else {
+					total_frames = sprite_get_number(headCombo3);
+				}
+			break;
+			
+			case "hit":
+				total_frames = sprite_get_number(headHit);
+			break;
+			
+			case "down":
+				total_frames = sprite_get_number(headPickup);
+			break;
+			
+			case "clon":
+				total_frames = sprite_get_number(headChargingChakra);
+			break;
+			
+			case "throw":
+				total_frames = sprite_get_number(headThrow);
+			break;
+			
+			case "jutsuSpit":
+				total_frames = sprite_get_number(headJutsuSpit);
+			break;
+			
+			case "jumpJutsuSpit":
+				total_frames = sprite_get_number(headJumpJutsuSpit);
+			break;
+		}
+	break;
+}
+
+//Image Index
+img_index = ++img_frame div img_speed;
+
+//Reset img_frame
+if (img_index > total_frames - 1) { //End animation
+	if(state == "wait" && lastState == "jutsuSpit"){
+		img_index = total_frames - 2; //Return 2 frames
+		
+		//Update image frame
+		img_frame = img_index * img_speed;
+	} else {
+		img_frame = 0;
+		//Update image index
+		img_index = img_frame div img_speed;
+	}
+}
 
 switch(state){
 	case "free":
-	
-	//Speed Animation
-	image_speed = 0.3;
-	
 	//Run Animation
 	if ((keyboard_check(vk_left)) || ((keyboard_check(vk_right))) && grounded){
-		draw_sprite_ext(headRunning, -1, x, y-5, 1*(charDirection), 1, 0, c_white, 1);
-		draw_sprite_ext(hairRunning, -1, x, y-5, 1*(charDirection), 1, 0, global.hairColor, 1);
-		draw_sprite_ext(clothingRunning, -1, x, y-5, 1*(charDirection), 1, 0, c_white, 1);
-		draw_sprite_ext(eyesRunning, -1, x, y-5, 1*(charDirection), 1, 0, global.eyesColor, 1);
-	} else {
-		draw_sprite_ext(headStance, -1, x, y-5, 1*(charDirection), 1, 0, c_white, 1);
-		draw_sprite_ext(hairStance, -1, x, y-5, 1*(charDirection), 1, 0, global.hairColor, 1);
-		draw_sprite_ext(clothingStance, -1, x, y-5, 1*(charDirection), 1, 0, c_white, 1);
-		draw_sprite_ext(eyesStance, -1, x, y-5, 1*(charDirection), 1, 0, global.eyesColor, 1);
+		draw_sprite_ext(headRunning, img_index, x, y-5, 1*(charDirection), 1, 0, c_white, 1);
+		draw_sprite_ext(hairRunning, img_index, x, y-5, 1*(charDirection), 1, 0, global.hairColor, 1);
+		draw_sprite_ext(clothingRunning, img_index, x, y-5, 1*(charDirection), 1, 0, c_white, 1);
+		draw_sprite_ext(eyesRunning, img_index, x, y-5, 1*(charDirection), 1, 0, global.eyesColor, 1);
+	} else {	
+		draw_sprite_ext(headStance, img_index, x, y-5, 1*(charDirection), 1, 0, c_white, 1);
+		draw_sprite_ext(hairStance, img_index, x, y-5, 1*(charDirection), 1, 0, global.hairColor, 1);
+		draw_sprite_ext(clothingStance, img_index, x, y-5, 1*(charDirection), 1, 0, c_white, 1);
+		draw_sprite_ext(eyesStance, img_index, x, y-5, 1*(charDirection), 1, 0, global.eyesColor, 1);
 	}
 	
 	break;
 	
 	case "jumping":
-		draw_sprite_ext(headJumping, -1, x, y-5, 1*(charDirection), 1, 0, c_white, 1);
-		draw_sprite_ext(hairJumping, -1, x, y-5, 1*(charDirection), 1, 0, global.hairColor, 1);
-		draw_sprite_ext(clothingJumping, -1, x, y-5, 1*(charDirection), 1, 0, c_white, 1);
-		draw_sprite_ext(eyesJumping, -1, x, y-5, 1*(charDirection), 1, 0, global.eyesColor, 1);
+		draw_sprite_ext(headJumping, img_index, x, y-5, 1*(charDirection), 1, 0, c_white, 1);
+		draw_sprite_ext(hairJumping, img_index, x, y-5, 1*(charDirection), 1, 0, global.hairColor, 1);
+		draw_sprite_ext(clothingJumping, img_index, x, y-5, 1*(charDirection), 1, 0, c_white, 1);
+		draw_sprite_ext(eyesJumping, img_index, x, y-5, 1*(charDirection), 1, 0, global.eyesColor, 1);
 	break;
 	
 	case "falling":
-		draw_sprite_ext(headFalling, -1, x, y-5, 1*(charDirection), 1, 0, c_white, 1);
-		draw_sprite_ext(hairFalling, -1, x, y-5, 1*(charDirection), 1, 0, global.hairColor, 1);
-		draw_sprite_ext(clothingFalling, -1, x, y-5, 1*(charDirection), 1, 0, c_white, 1);
-		draw_sprite_ext(eyesFalling, -1, x, y-5, 1*(charDirection), 1, 0, global.eyesColor, 1);
+		draw_sprite_ext(headFalling, img_index, x, y-5, 1*(charDirection), 1, 0, c_white, 1);
+		draw_sprite_ext(hairFalling, img_index, x, y-5, 1*(charDirection), 1, 0, global.hairColor, 1);
+		draw_sprite_ext(clothingFalling, img_index, x, y-5, 1*(charDirection), 1, 0, c_white, 1);
+		draw_sprite_ext(eyesFalling, img_index, x, y-5, 1*(charDirection), 1, 0, global.eyesColor, 1);
 	break;
 	
 	case "hit":
-		draw_sprite_ext(headHit, -1, x, y-5, 1*(charDirection), 1, 0, c_white, 1);
-		draw_sprite_ext(hairHit, -1, x, y-5, 1*(charDirection), 1, 0, global.hairColor, 1);
-		draw_sprite_ext(clothingHit, -1, x, y-5, 1*(charDirection), 1, 0, c_white, 1);
+		draw_sprite_ext(headHit, img_index, x, y-5, 1*(charDirection), 1, 0, c_white, 1);
+		draw_sprite_ext(hairHit, img_index, x, y-5, 1*(charDirection), 1, 0, global.hairColor, 1);
+		draw_sprite_ext(clothingHit, img_index, x, y-5, 1*(charDirection), 1, 0, c_white, 1);
 	break;
 	
 	case "dead":
-		draw_sprite_ext(headDead, -1, x, y-5, 1*(charDirection), 1, 0, c_white, 1);
-		draw_sprite_ext(hairDead, -1, x, y-5, 1*(charDirection), 1, 0, global.hairColor, 1);
-		draw_sprite_ext(clothingDead, -1, x, y-5, 1*(charDirection), 1, 0, c_white, 1);
+		draw_sprite_ext(headDead, img_index, x, y-5, 1*(charDirection), 1, 0, c_white, 1);
+		draw_sprite_ext(hairDead, img_index, x, y-5, 1*(charDirection), 1, 0, global.hairColor, 1);
+		draw_sprite_ext(clothingDead, img_index, x, y-5, 1*(charDirection), 1, 0, c_white, 1);
 	break;
 	
 	case "defense":
-		draw_sprite_ext(headDefense, -1, x, y-5, 1*(charDirection), 1, 0, c_white, 1);
-		draw_sprite_ext(hairDefense, -1, x, y-5, 1*(charDirection), 1, 0, global.hairColor, 1);
-		draw_sprite_ext(clothingDefense, -1, x, y-5, 1*(charDirection), 1, 0, c_white, 1);
-		draw_sprite_ext(eyesDefense, -1, x, y-5, 1*(charDirection), 1, 0, global.eyesColor, 1);
+		draw_sprite_ext(headDefense, img_index, x, y-5, 1*(charDirection), 1, 0, c_white, 1);
+		draw_sprite_ext(hairDefense, img_index, x, y-5, 1*(charDirection), 1, 0, global.hairColor, 1);
+		draw_sprite_ext(clothingDefense, img_index, x, y-5, 1*(charDirection), 1, 0, c_white, 1);
+		draw_sprite_ext(eyesDefense, img_index, x, y-5, 1*(charDirection), 1, 0, global.eyesColor, 1);
 	break
 	
 	case "wait":
-		if(lastState == "combo"){
-				//Speed Animation
-				image_speed = 0.4;
-				
+		if(lastState == "combo"){		
 			if(comboCounter == 0){
-				draw_sprite_ext(headCombo1, -1, x, y-5, 1*(charDirection), 1, 0, c_white, 1);
-				draw_sprite_ext(hairCombo1, -1, x, y-5, 1*(charDirection), 1, 0, global.hairColor, 1);
-				draw_sprite_ext(clothingCombo1, -1, x, y-5, 1*(charDirection), 1, 0, c_white, 1);
-				draw_sprite_ext(eyesCombo1, -1, x, y-5, 1*(charDirection), 1, 0, global.eyesColor, 1);
+				draw_sprite_ext(headCombo1, img_index, x, y-5, 1*(charDirection), 1, 0, c_white, 1);
+				draw_sprite_ext(hairCombo1, img_index, x, y-5, 1*(charDirection), 1, 0, global.hairColor, 1);
+				draw_sprite_ext(clothingCombo1, img_index, x, y-5, 1*(charDirection), 1, 0, c_white, 1);
+				draw_sprite_ext(eyesCombo1, img_index, x, y-5, 1*(charDirection), 1, 0, global.eyesColor, 1);
 			} else if(comboCounter == 1){
-				draw_sprite_ext(headCombo2, -1, x, y-5, 1*(charDirection), 1, 0, c_white, 1);
-				draw_sprite_ext(hairCombo2, -1, x, y-5, 1*(charDirection), 1, 0, global.hairColor, 1);
-				draw_sprite_ext(clothingCombo2, -1, x, y-5, 1*(charDirection), 1, 0, c_white, 1);
-				draw_sprite_ext(eyesCombo2, -1, x, y-5, 1*(charDirection), 1, 0, global.eyesColor, 1);
+				draw_sprite_ext(headCombo2, img_index, x, y-5, 1*(charDirection), 1, 0, c_white, 1);
+				draw_sprite_ext(hairCombo2, img_index, x, y-5, 1*(charDirection), 1, 0, global.hairColor, 1);
+				draw_sprite_ext(clothingCombo2, img_index, x, y-5, 1*(charDirection), 1, 0, c_white, 1);
+				draw_sprite_ext(eyesCombo2, img_index, x, y-5, 1*(charDirection), 1, 0, global.eyesColor, 1);
 			} else {
-				draw_sprite_ext(headCombo3, -1, x, y-5, 1*(charDirection), 1, 0, c_white, 1);
-				draw_sprite_ext(hairCombo3, -1, x, y-5, 1*(charDirection), 1, 0, global.hairColor, 1);
-				draw_sprite_ext(clothingCombo3, -1, x, y-5, 1*(charDirection), 1, 0, c_white, 1);
-				draw_sprite_ext(eyesCombo3, -1, x, y-5, 1*(charDirection), 1, 0, global.eyesColor, 1);
+				draw_sprite_ext(headCombo3, img_index, x, y-5, 1*(charDirection), 1, 0, c_white, 1);
+				draw_sprite_ext(hairCombo3, img_index, x, y-5, 1*(charDirection), 1, 0, global.hairColor, 1);
+				draw_sprite_ext(clothingCombo3, img_index, x, y-5, 1*(charDirection), 1, 0, c_white, 1);
+				draw_sprite_ext(eyesCombo3, img_index, x, y-5, 1*(charDirection), 1, 0, global.eyesColor, 1);
 			}
-		} else if(lastState = "hit"){
-			//Speed Animation
-			image_speed = 0.3;
-			
-			draw_sprite_ext(headHit, -1, x, y-5, 1*(charDirection), 1, 0, c_white, 1);
-			draw_sprite_ext(hairHit, -1, x, y-5, 1*(charDirection), 1, 0, global.hairColor, 1);
-			draw_sprite_ext(clothingHit, -1, x, y-5, 1*(charDirection), 1, 0, c_white, 1);	
+		} else if(lastState = "hit"){	
+			draw_sprite_ext(headHit, img_index, x, y-5, 1*(charDirection), 1, 0, c_white, 1);
+			draw_sprite_ext(hairHit, img_index, x, y-5, 1*(charDirection), 1, 0, global.hairColor, 1);
+			draw_sprite_ext(clothingHit, img_index, x, y-5, 1*(charDirection), 1, 0, c_white, 1);	
 		} else if(lastState = "down"){
-			//Speed Animation
-			image_speed = 0.3;
-			
-			draw_sprite_ext(headPickup, -1, x, y-5, 1*(charDirection), 1, 0, c_white, 1);
-			draw_sprite_ext(hairPickup, -1, x, y-5, 1*(charDirection), 1, 0, global.hairColor, 1);
-			draw_sprite_ext(clothingPickup, -1, x, y-5, 1*(charDirection), 1, 0, c_white, 1);
-			draw_sprite_ext(eyesPickup, -1, x, y-5, 1*(charDirection), 1, 0, global.eyesColor, 1);
+			draw_sprite_ext(headPickup, img_index, x, y-5, 1*(charDirection), 1, 0, c_white, 1);
+			draw_sprite_ext(hairPickup, img_index, x, y-5, 1*(charDirection), 1, 0, global.hairColor, 1);
+			draw_sprite_ext(clothingPickup, img_index, x, y-5, 1*(charDirection), 1, 0, c_white, 1);
+			draw_sprite_ext(eyesPickup, img_index, x, y-5, 1*(charDirection), 1, 0, global.eyesColor, 1);
 		} else if(lastState = "clon"){
-			//Speed Animation
-			image_speed = 0.3;
-			
-			draw_sprite_ext(headChargingChakra, -1, x, y-5, 1*(charDirection), 1, 0, c_white, 1);
-			draw_sprite_ext(hairChargingChakra, -1, x, y-5, 1*(charDirection), 1, 0, global.hairColor, 1);
-			draw_sprite_ext(clothingChargingChakra, -1, x, y-5, 1*(charDirection), 1, 0, c_white, 1);
-			draw_sprite_ext(eyesChargingChakra, -1, x, y-5, 1*(charDirection), 1, 0, global.eyesColor, 1);
+			draw_sprite_ext(headChargingChakra, img_index, x, y-5, 1*(charDirection), 1, 0, c_white, 1);
+			draw_sprite_ext(hairChargingChakra, img_index, x, y-5, 1*(charDirection), 1, 0, global.hairColor, 1);
+			draw_sprite_ext(clothingChargingChakra, img_index, x, y-5, 1*(charDirection), 1, 0, c_white, 1);
+			draw_sprite_ext(eyesChargingChakra, img_index, x, y-5, 1*(charDirection), 1, 0, global.eyesColor, 1);
 		} else if(lastState = "throw"){
-			//Speed Animation
-			image_speed = 0.3;
-			
-			draw_sprite_ext(headThrow, -1, x, y-5, 1*(charDirection), 1, 0, c_white, 1);
-			draw_sprite_ext(hairThrow, -1, x, y-5, 1*(charDirection), 1, 0, global.hairColor, 1);
-			draw_sprite_ext(clothingThrow, -1, x, y-5, 1*(charDirection), 1, 0, c_white, 1);
-			draw_sprite_ext(eyesThrow, -1, x, y-5, 1*(charDirection), 1, 0, global.eyesColor, 1);
+			draw_sprite_ext(headThrow, img_index, x, y-5, 1*(charDirection), 1, 0, c_white, 1);
+			draw_sprite_ext(hairThrow, img_index, x, y-5, 1*(charDirection), 1, 0, global.hairColor, 1);
+			draw_sprite_ext(clothingThrow, img_index, x, y-5, 1*(charDirection), 1, 0, c_white, 1);
+			draw_sprite_ext(eyesThrow, img_index, x, y-5, 1*(charDirection), 1, 0, global.eyesColor, 1);
+		} else if(lastState = "jutsuSpit"){
+			draw_sprite_ext(headJutsuSpit, img_index, x, y-5, 1*(charDirection), 1, 0, c_white, 1);
+			draw_sprite_ext(hairJutsuSpit, img_index, x, y-5, 1*(charDirection), 1, 0, global.hairColor, 1);
+			draw_sprite_ext(clothingJutsuSpit, img_index, x, y-5, 1*(charDirection), 1, 0, c_white, 1);
+			draw_sprite_ext(eyesJutsuSpit, img_index, x, y-5, 1*(charDirection), 1, 0, global.eyesColor, 1);	
+		} else if(lastState == "jumpJutsuSpit"){
+			draw_sprite_ext(headJumpJutsuSpit, img_index, x, y-5, 1*(charDirection), 1, 0, c_white, 1);
+			draw_sprite_ext(hairJumpJutsuSpit, img_index, x, y-5, 1*(charDirection), 1, 0, global.hairColor, 1);
+			draw_sprite_ext(clothingJumpJutsuSpit, img_index, x, y-5, 1*(charDirection), 1, 0, c_white, 1);
+			draw_sprite_ext(eyesJumpJutsuSpit, img_index, x, y-5, 1*(charDirection), 1, 0, global.eyesColor, 1);
 		}
 	break;
 	
 	case "charge":
-		//Speed Animation
-		image_speed = 0.3;
-			
-		draw_sprite_ext(headChargingChakra, -1, x, y-5, 1*(charDirection), 1, 0, c_white, 1);
-		draw_sprite_ext(hairChargingChakra, -1, x, y-5, 1*(charDirection), 1, 0, global.hairColor, 1);
-		draw_sprite_ext(clothingChargingChakra, -1, x, y-5, 1*(charDirection), 1, 0, c_white, 1);
-		draw_sprite_ext(eyesChargingChakra, -1, x, y-5, 1*(charDirection), 1, 0, global.eyesColor, 1);
-		draw_sprite(spr_chakra, -1, x, y); //Effect
+		draw_sprite_ext(headChargingChakra, img_index, x, y-5, 1*(charDirection), 1, 0, c_white, 1);
+		draw_sprite_ext(hairChargingChakra, img_index, x, y-5, 1*(charDirection), 1, 0, global.hairColor, 1);
+		draw_sprite_ext(clothingChargingChakra, img_index, x, y-5, 1*(charDirection), 1, 0, c_white, 1);
+		draw_sprite_ext(eyesChargingChakra, img_index, x, y-5, 1*(charDirection), 1, 0, global.eyesColor, 1);
+		draw_sprite(spr_chakra, img_index, x, y); //Effect
 	break;
-
 }

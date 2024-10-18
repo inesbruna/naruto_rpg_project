@@ -15,6 +15,9 @@ var _transform = keyboard_check_pressed(ord("C"));
 var _skill1 = keyboard_check_pressed(ord("Q"));
 var _skill2 = keyboard_check_pressed(ord("W"));
 var _skill3 = keyboard_check_pressed(ord("E"));
+var _skill4 = keyboard_check_pressed(ord("R"));
+var _skill5 = keyboard_check_pressed(ord("T"));
+var _skill6 = keyboard_check_pressed(ord("Y"));
 var _pickup = keyboard_check_pressed(ord("Z"));
 
 //Gravity
@@ -137,6 +140,7 @@ switch(state){
 		
 		//Combo Grounded
 		if(_combo && grounded && !afterCombo){
+			img_frame = 0;
 			state = "combo";	
 		}
 		
@@ -147,8 +151,9 @@ switch(state){
 		
 		//Dead
 		if (global.player_health <= 0){
+			img_frame = 0;
 			state = "dead";	
-			image_index = 0;
+			
 		}
 	
 		//Defense
@@ -159,16 +164,19 @@ switch(state){
 		
 		//Pick up
 		if (place_meeting(x, y, obj_items) && _pickup){
+			img_frame = 0;
 			state = "down";	
 		}
 		
 		//Charging Chakra
 		if (_charge){
+			img_frame = 0;
 			state = "charge";	
 		}
 		
 		//Throw itens
 		if (_throw && !throwCooldown){
+			img_frame = 0;
 			hspd = 0;
 			throwCooldown = true;
 			alarm[0] = 120;
@@ -192,7 +200,12 @@ switch(state){
 				
 		//Skill 3
 		if (_skill3 && !skill3_cooldown){
+			alarm[8] = scr_goukakyuu(skill3_cooldown);
+		}
 		
+		//Skill 4
+		if (_skill4 && !skill4_cooldown){
+			alarm[9] = scr_daitoppa(skill4_cooldown);
 		}
 		
 	break;
@@ -232,7 +245,7 @@ switch(state){
 		
 		//Go back to free state
 		if (grounded && sign(vspd) <= 0) {
-			image_index = 0;
+			
 			state = "free";
 		}
 		
@@ -262,10 +275,7 @@ switch(state){
 			state = "hit";
 			global.player_health -= 5; //Reduce Player Health
 		}
-	
-		//Preparation
-		image_index = 0;
-	
+		
 		//Stop Moving
 		hspd = 0;
 	
@@ -363,11 +373,6 @@ switch(state){
 	
 	case "dead":
 		hspd = 0; //Stop character from moving
-		
-		//Stop at last frame
-		if(image_index > image_number-1){
-			image_index = 3;	
-		}
 	break;
 	
 	case "defense":
@@ -410,7 +415,6 @@ switch(state){
 	
 	case "down":
 		hspd = 0;
-		sprite_index = 0;
 		audio_play_sound(snd_item, 1, 0); //Play Audio
 		lastState = "down";
 		timer = 10;
