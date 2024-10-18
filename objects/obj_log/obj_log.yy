@@ -9,8 +9,8 @@
   "name":"obj_log",
   "overriddenProperties":[],
   "parent":{
-    "name":"player",
-    "path":"folders/Objetos/player.yy",
+    "name":"skills",
+    "path":"folders/Objetos/skills.yy",
   },
   "parentObjectId":null,
   "persistent":false,

@@ -1,5 +1,4 @@
 /// @description State Machine
-
 //Character
 scr_character();
 
@@ -47,15 +46,12 @@ if (lifetime <= 0){
 	state = "dead";	
 }
 
-
 //State Machine
-
 switch(state){
 	case "free":
-	
-		if(instance_exists(obj_enemyparent) && !obj_enemyparent.dead){
+		if(instance_exists(obj_enemyparent) && !(obj_enemyparent.state = "dead")){
 			//Chase
-			if ((distance_to_object(obj_enemyparent) < 400) && (distance_to_object(obj_enemyparent) > 8)){ 
+			if ((distance_to_object(obj_enemyparent) < 300) && (distance_to_object(obj_enemyparent) > 8)){ 
 				state = "chase";
 			}
 
@@ -66,7 +62,7 @@ switch(state){
 			}
 									
 			//Chase Player
-			if (distance_to_object(obj_enemyparent) > 400){
+			if (distance_to_object(obj_enemyparent) > 300){
 				if ((distance_to_object(obj_player) > 8)){ 
 					state = "chase_player";
 				}
@@ -93,8 +89,8 @@ switch(state){
 		hspd = vir * 3;
 			
 		//Chase
-		if(instance_exists(obj_enemyparent) && !obj_enemyparent.dead){
-			if (distance_to_object(obj_enemyparent) < 400){
+		if(instance_exists(obj_enemyparent) && !(obj_enemyparent.state = "dead")){
+			if (distance_to_object(obj_enemyparent) < 300){
 				state = "chase";
 			}
 		}
@@ -111,10 +107,10 @@ switch(state){
 		
 		if (hspd != 0) charDirection = sign(hspd);
 		vir = sign(obj_enemyparent.x - x);
-		hspd = vir * 2;
+		hspd = vir * 3;
 		
 		//Free
-		if ((distance_to_object(obj_enemyparent) > 400) || (distance_to_object(obj_enemyparent) < 8)){
+		if ((distance_to_object(obj_enemyparent) > 300) || (distance_to_object(obj_enemyparent) < 8)){
 			hspd = 0;
 			state = "free";
 		}
@@ -128,9 +124,9 @@ switch(state){
 			if charDirection=-1 hspd-=2;
 			
 			//Create hitbox
-			var _hitbox = instance_create_depth(x, y, depth, obj_narutohitbox);
-			_hitbox.naruto = self;
-			_hitbox.charDirection = charDirection;
+			var _hitbox = instance_create_depth(x, y-30, depth, obj_narutohitbox);
+			_hitbox.clon = self;
+			_hitbox.image_xscale = charDirection;
 			
 			//Change state to attack
 			state = "attack";
@@ -151,10 +147,10 @@ switch(state){
 		if charDirection=+1 hspd+=2;
 		if charDirection=-1 hspd-=2;
 							
-		//Create Hitbox
-		var _hitbox = instance_create_depth(x, y, depth, obj_narutohitbox);
-		_hitbox.naruto = self;
-		_hitbox.charDirection = charDirection;
+		//Create hitbox
+		var _hitbox = instance_create_depth(x, y-30, depth, obj_narutohitbox);
+		_hitbox.clon = self;
+		_hitbox.image_xscale = charDirection;
 			
 		//Hit
 		if(place_meeting(x, y, obj_enemyhitbox)){

@@ -6,3 +6,7 @@ alarm[0] = 5000;
 randomize();
 items = variable_struct_get_names(obj_game.s_items);
 item = irandom(array_length(items)-1);
+
+//Physics
+vspd = 0;
+grv = 0.3;

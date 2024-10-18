@@ -1,4 +1,3 @@
-image_speed = 0;
 grounded = true;
 
 stance = true;

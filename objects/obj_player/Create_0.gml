@@ -16,8 +16,12 @@ afterCombo = false; //Cooldown to make a combo again
 
 timer = 0;
 
+//Cooldowns
 throwCooldown = false;
 substitutionCooldown = false;
+skill1_cooldown = false;
+skill2_cooldown = false;
+skill3_cooldown = false;
 
 skill1 = false;
 usingSkill1 = false;

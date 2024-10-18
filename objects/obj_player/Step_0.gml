@@ -97,7 +97,7 @@ switch(state){
 		}
 		
 		//Jump & Falling State
-		if (_jump && grounded){
+		if (_jump && grounded && !(instance_exists(obj_textbox))){
 			audio_play_sound(snd_jump, 10, false);
 		    vspd = vspd - 7;
 			state = "jumping";
@@ -111,12 +111,12 @@ switch(state){
 		if (keyboard_check_released(vk_left)) && grounded && !dashTimer{ //left
 			dashTimer = true;
 			lastPress = "A";
-			alarm[6] = 10; //Timer to press again
+			alarm[5] = 10; //Timer to press again
 		}
 		if (keyboard_check_released(vk_right)) && grounded && !dashTimer{ //right
 			dashTimer = true;
 			lastPress = "D";
-			alarm[6] = 10; //Timer to press again
+			alarm[5] = 10; //Timer to press again
 		}
 		
 		if(dashTimer = true && lastPress = "D"){
@@ -159,7 +159,7 @@ switch(state){
 		
 		//Pick up
 		if (place_meeting(x, y, obj_items) && _pickup){
-			state = "pickup";	
+			state = "down";	
 		}
 		
 		//Charging Chakra
@@ -182,17 +182,17 @@ switch(state){
 		
 		//Skill 1
 		if (_skill1){
-			if(!instance_exists(obj_clon) && global.player_chakra >= 30){
-				hspd = 0;
-				instance_create_depth(x-30, y, 99, obj_clon);
-				instance_create_depth(x-30, y, 9, obj_smoke);
-				audio_play_sound(snd_jutsu, 0, false);
-				audio_play_sound(snd_smoke, 0, false);
-				global.player_chakra -= 30;
-				lastState = "clon";
-				timer = 25;
-				state = "wait";
-			}
+			alarm[6] = scr_shadowclon(skill1_cooldown);
+		}
+		
+		//Skill 2
+		if (_skill2 && !skill2_cooldown){
+			alarm[7] = scr_doryuheki(skill2_cooldown);
+		}
+				
+		//Skill 3
+		if (_skill3 && !skill3_cooldown){
+		
 		}
 		
 	break;
@@ -250,7 +250,7 @@ switch(state){
 		if lastPress = "D" hspd = hspd + 2;
 		
 		dashCooldown = true;
-		alarm[5] = 15;
+		alarm[4] = 15;
 		
 		state = "free";
 		
@@ -380,7 +380,7 @@ switch(state){
 		}
 		
 		//Kawarimi no Jutsu
-		if(place_meeting(x, y, obj_enemyhitbox) && !substitutionCooldown){
+		if(place_meeting(x, y, obj_enemyhitbox) && !substitutionCooldown && global.player_chakra >= 15){
 			if(_left){
 				substitutionCooldown = true;
 				alarm[1] = 300;
@@ -408,11 +408,11 @@ switch(state){
 		
 	break;
 	
-	case "pickup":
+	case "down":
 		hspd = 0;
 		sprite_index = 0;
 		audio_play_sound(snd_item, 1, 0); //Play Audio
-		lastState = "pickup";
+		lastState = "down";
 		timer = 10;
 		state = "wait";
 	break;

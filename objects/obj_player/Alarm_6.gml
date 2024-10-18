@@ -1,2 +1,2 @@
-/// @description dashTimer
-dashTimer = false;
+/// @description Skill 1 CD
+skill1_cooldown = false;

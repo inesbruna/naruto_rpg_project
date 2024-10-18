@@ -1,19 +1,19 @@
-/// @description Inserir descrição aqui
-// Você pode escrever seu código neste editor
-//animation
+/// @description Variables
+
+//Image Speed
 image_speed = 0.3;
 
-//gravity
+//Physics
 hspd = 0;
 vspd = 0;
 grv = 0.3;
 grounded = true;
-hitting = false;
-canAttack = true;
-attacking = false;
-dead = false;
 
-hp = 200;
-hpmax = 200;
-
+//States
 state = "free";
+canAttack = true;
+endAction = true;
+
+//Stats
+hp = 250;
+hpmax = 250;

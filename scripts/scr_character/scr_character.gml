@@ -14,7 +14,7 @@ function scr_character(){
 		headHit = spr_head_hit;
 		headDead = spr_head_dead;
 		headDefense = spr_head_defense;
-		headPickup = spr_head_pickup;
+		headPickup = spr_head_down;
 		headChargingChakra = spr_head_chargingChakra;
 		headThrow = spr_head_throw;
 		break;
@@ -32,7 +32,7 @@ function scr_character(){
 		hairHit = spr_hair0_hit;
 		hairDead = spr_hair0_dead;
 		hairDefense = spr_hair0_defense;
-		hairPickup = spr_hair0_pickup;
+		hairPickup = spr_hair0_down;
 		hairChargingChakra = spr_hair0_chargingChakra;
 		hairThrow = spr_hair0_throw;
 		break;
@@ -47,7 +47,7 @@ function scr_character(){
 		hairHit = spr_hair1_hit;
 		hairDead = spr_hair1_dead;
 		hairDefense = spr_hair1_defense;
-		hairPickup = spr_hair1_pickup;
+		hairPickup = spr_hair1_down;
 		hairChargingChakra = spr_hair1_chargingChakra;
 		hairThrow = spr_hair1_throw;
 		break;
@@ -62,7 +62,7 @@ function scr_character(){
 		hairHit = spr_hair2_hit;
 		hairDead = spr_hair2_dead;
 		hairDefense = spr_hair2_defense;
-		hairPickup = spr_hair2_pickup;
+		hairPickup = spr_hair2_down;
 		hairChargingChakra = spr_hair2_chargingChakra;
 		hairThrow = spr_hair2_throw;
 		break;
@@ -77,7 +77,7 @@ function scr_character(){
 		hairHit = spr_hair3_hit;
 		hairDead = spr_hair3_dead;
 		hairDefense = spr_hair3_defense;
-		hairPickup = spr_hair3_pickup;
+		hairPickup = spr_hair3_down;
 		hairChargingChakra = spr_hair3_chargingChakra;
 		hairThrow = spr_hair3_throw;
 		break;
@@ -95,7 +95,7 @@ function scr_character(){
 		clothingHit = spr_clothing0_hit;
 		clothingDead = spr_clothing0_dead;
 		clothingDefense = spr_clothing0_defense;
-		clothingPickup = spr_clothing0_pickup;
+		clothingPickup = spr_clothing0_down;
 		clothingChargingChakra = spr_clothing0_chargingChakra;
 		clothingThrow = spr_clothing0_throw;
 		break;
@@ -109,7 +109,7 @@ function scr_character(){
 	eyesCombo2 = spr_eyes_combo2;
 	eyesCombo3 = spr_eyes_combo3;
 	eyesDefense = spr_eyes_defense;
-	eyesPickup = spr_eyes_pickup;
+	eyesPickup = spr_eyes_down;
 	eyesChargingChakra = spr_eyes_chargingChakra;
 	eyesThrow = spr_eyes_throw;
 		

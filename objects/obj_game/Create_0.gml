@@ -16,6 +16,7 @@ global.head = 0;
 global.clothing = 0;
 global.hairColor = 0;
 global.eyesColor = 0;
+global.player_rank = "Academy Student";
 
 //struct items
 s_items = {
@@ -355,13 +356,35 @@ s_items = {
 
 // Missions
 
-s_quests = {
-	quest0 : {
-		name : "Defeat three Konoha ninjas",
-		description : "There are Konoha ninjas in the forest who are waiting for training, go and defeat three of them.",
-		condition : 3,
-		reward_xp : 10,
-		reward_ryo : 15,
+s_ranks = {
+	academyStudent : {
+		name : "Academy Student",
+		description : "The academy is where would-be ninja start; they are not actually considered ninja" + 
+		"until they graduate. Academy students take formal and practical tests of all sorts and are" + 
+		"taught basic ninja skills, such as martial arts, techniques, physical fitness and the way of" +
+		"the ninja..",
+		levelCondition : 0,
 		reward_item : noone
-	}
+	},
+	genin : {
+		name : "Genin",
+		description : "Genin are the lowest level of ninja. Genin are given headbands with their village's" +
+		"symbol on it to represent what village they come from and that they are full fledged ninja.",
+		levelCondition : 5,
+		reward_item : 8 //Ninja Headband
+	},
+	chunin : {
+		name : "Chunin",
+		description : "Chunin are ninja who are qualified to watch over and guide other ninja. Chunin" +
+		"have reached a level of maturity that primarily consists of leadership skills and tactical prowess.",
+		levelCondition : 5,
+		reward_item : 14 //Chunin Vest
+	},
+	jounin : {
+		name : "Jounin",
+		description : "Jonin are generally highly experienced ninja with great individual skill who serve" +
+		"as military captains.",
+		levelCondition : 5,
+		reward_item : noone //Ninja Headband
+	},
 };

@@ -1,5 +1,6 @@
 /// @description Variables
 
+//Image Speed
 image_speed = 0.3;
 
 //Physics
@@ -8,13 +9,11 @@ vspd = 0;
 grv = 0.3;
 grounded = true;
 
-//State
+//States
 state = "free";
-hitting = false;
 canAttack = true;
-attacking = false;
-dead = false;
-
+endAction = true;
 
 //Stats
 hp = 100;
+hpmax = 100;

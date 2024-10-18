@@ -1,3 +1,2 @@
-/// @description Inserir descrição aqui
-// Você pode escrever seu código neste editor
-hitting = false;
+/// @description canAttack CD
+canAttack = true;

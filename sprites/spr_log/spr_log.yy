@@ -1,8 +1,8 @@
 {
   "$GMSprite":"",
   "%Name":"spr_log",
-  "bboxMode":0,
-  "bbox_bottom":34,
+  "bboxMode":2,
+  "bbox_bottom":23,
   "bbox_left":0,
   "bbox_right":27,
   "bbox_top":0,
@@ -25,8 +25,8 @@
   "nineSlice":null,
   "origin":9,
   "parent":{
-    "name":"FX",
-    "path":"folders/Sprites/FX.yy",
+    "name":"Skills",
+    "path":"folders/Sprites/FX/Skills.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",

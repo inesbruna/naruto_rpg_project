@@ -22,16 +22,18 @@ draw_text(164,183, global.player_level);
 //menu
 if(open_menu){
 	draw_sprite_ext(spr_menu, -1, 500, 200, 3, 3, 0, c_white, 1);
-	draw_text(560, 240, "Nickname: ");
-	draw_text(560, 270, "Level: ");
-	draw_text(560, 300, "Clan: " + string(global.player_clan));
-	draw_sprite(spr_rasengan, -1, 550, 450);
-	draw_text(650, 465, "Skill 1: Rasengan");
-	draw_text(1200, 420, "Status");
-	draw_text(1200, 450, "HP: " + string(global.player_healthmax));
-	draw_text(1200, 480, "Chakra: " + string(global.player_chakramax));
-	draw_text(1200, 510, "Strength: " + string(global.player_strength));
-	draw_text(1200, 540, "Intelligence: " + string(global.player_intelligence));
+	draw_text(630, 250, "Nickname: ");
+	draw_text(630, 280, "Level: ");
+	draw_text(630, 310, "Clan: " + string(global.player_clan));
+	draw_sprite_ext(spr_shadowclon, -1, 680, 496, 2, 2, 0, c_white, 1);
+	draw_text(680, 496, "Skill 1: Shadow Clon Jutsu");
+	draw_sprite_ext(spr_log, -1, 680, 576, 2, 2, 0, c_white, 1);
+	draw_text(680, 576, "Skill 2: Substitution Jutsu");
+	draw_text(1285, 435, "Status");
+	draw_text(1190, 495, "HP: " + string(global.player_healthmax));
+	draw_text(1190, 515, "Chakra: " + string(global.player_chakramax));
+	draw_text(1190, 545, "Strength: " + string(global.player_strength));
+	draw_text(1190, 575, "Intelligence: " + string(global.player_intelligence));
 }
 
 if(open_inventory){

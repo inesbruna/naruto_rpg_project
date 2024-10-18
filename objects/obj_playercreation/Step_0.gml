@@ -96,13 +96,13 @@ switch(animation){
 	eyesAnimation = spr_eyes_defense;
 	break;
 		case 10:	
-	headAnimation = spr_head_pickup;
-	hair0Animation = spr_hair0_pickup;
-	hair1Animation = spr_hair1_pickup;
-	hair2Animation = spr_hair2_pickup;
-	hair3Animation = spr_hair3_pickup;
-	clothingAnimation = spr_clothing0_pickup;
-	eyesAnimation = spr_eyes_pickup;
+	headAnimation = spr_head_down;
+	hair0Animation = spr_hair0_down;
+	hair1Animation = spr_hair1_down;
+	hair2Animation = spr_hair2_down;
+	hair3Animation = spr_hair3_down;
+	clothingAnimation = spr_clothing0_down;
+	eyesAnimation = spr_eyes_down;
 	break;
 		case 11:	
 	headAnimation = spr_head_chargingChakra;

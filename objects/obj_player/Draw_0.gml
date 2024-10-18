@@ -88,7 +88,7 @@ switch(state){
 			draw_sprite_ext(headHit, -1, x, y-5, 1*(charDirection), 1, 0, c_white, 1);
 			draw_sprite_ext(hairHit, -1, x, y-5, 1*(charDirection), 1, 0, global.hairColor, 1);
 			draw_sprite_ext(clothingHit, -1, x, y-5, 1*(charDirection), 1, 0, c_white, 1);	
-		} else if(lastState = "pickup"){
+		} else if(lastState = "down"){
 			//Speed Animation
 			image_speed = 0.3;
 			

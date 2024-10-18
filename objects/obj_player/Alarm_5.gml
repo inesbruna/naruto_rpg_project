@@ -1,2 +1,2 @@
-/// @description Dash CD
-dashCooldown = false;
+/// @description dashTimer
+dashTimer = false;

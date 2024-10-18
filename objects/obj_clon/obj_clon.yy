@@ -11,8 +11,8 @@
   "name":"obj_clon",
   "overriddenProperties":[],
   "parent":{
-    "name":"player",
-    "path":"folders/Objetos/player.yy",
+    "name":"skills",
+    "path":"folders/Objetos/skills.yy",
   },
   "parentObjectId":{
     "name":"obj_playerParent",
