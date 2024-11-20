@@ -1,6 +1,5 @@
-grounded = true;
-
-stance = true;
+//Dev Mode
+devmode = false;
 
 //assets
 hair = 0;

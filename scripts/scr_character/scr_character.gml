@@ -19,6 +19,7 @@ function scr_character(){
 		headThrow = spr_head_throw;
 		headJutsuSpit = spr_head_jutsuSpit;
 		headJumpJutsuSpit = spr_head_jumpJutsuSpit;
+		headJutsuDashFromDown = spr_head_jutsuDashFromDown;
 		break;
 	}
 	
@@ -39,6 +40,7 @@ function scr_character(){
 		hairThrow = spr_hair0_throw;
 		hairJutsuSpit = spr_hair0_jutsuSpit;
 		hairJumpJutsuSpit = spr_hair0_jumpJutsuSpit;
+		hairJutsuDashFromDown = spr_hair0_jutsuDashFromDown;
 		break;
 		case 1: 
 		hairStance = spr_hair1_stance;
@@ -56,6 +58,7 @@ function scr_character(){
 		hairThrow = spr_hair1_throw;
 		hairJutsuSpit = spr_hair1_jutsuSpit;
 		hairJumpJutsuSpit = spr_hair1_jumpJutsuSpit;
+		hairJutsuDashFromDown = spr_hair0_jutsuDashFromDown;
 		break;
 		case 2: 
 		hairStance = spr_hair2_stance;
@@ -73,6 +76,7 @@ function scr_character(){
 		hairThrow = spr_hair2_throw;
 		hairJutsuSpit = spr_hair2_jutsuSpit;
 		hairJumpJutsuSpit = spr_hair2_jumpJutsuSpit;
+		hairJutsuDashFromDown = spr_hair0_jutsuDashFromDown;
 		break;
 		case 3: 
 		hairStance = spr_hair3_stance;
@@ -90,6 +94,7 @@ function scr_character(){
 		hairThrow = spr_hair3_throw;
 		hairJutsuSpit = spr_hair3_jutsuSpit;
 		hairJumpJutsuSpit = spr_hair3_jumpJutsuSpit;
+		hairJutsuDashFromDown = spr_hair0_jutsuDashFromDown;
 		break;
 	}
 	
@@ -110,6 +115,7 @@ function scr_character(){
 		clothingThrow = spr_clothing0_throw;
 		clothingJutsuSpit = spr_clothing0_jutsuSpit;
 		clothingJumpJutsuSpit = spr_clothing0_jumpJutsuSpit;
+		clothingJutsuDashFromDown = spr_clothing0_jutsuDashFromDown;
 		break;
 	}
 	
@@ -125,5 +131,6 @@ function scr_character(){
 	eyesChargingChakra = spr_eyes_chargingChakra;
 	eyesThrow = spr_eyes_throw;
 	eyesJutsuSpit = spr_eyes_jutsuSpit;
-	eyesJumpJutsuSpit = spr_eyes_jumpJutsuSpit;	
+	eyesJumpJutsuSpit = spr_eyes_jumpJutsuSpit;
+	eyesJutsuDashFromDown = spr_eyes_jutsuDashFromDown;
 }

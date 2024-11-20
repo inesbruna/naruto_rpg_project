@@ -75,6 +75,14 @@ switch (state){
 			case "jumpJutsuSpit":
 				total_frames = sprite_get_number(headJumpJutsuSpit);
 			break;
+			
+			case "chargingChakra":
+				total_frames = sprite_get_number(headChargingChakra);
+			break;
+			
+			case "jutsuDashFromDown":
+				total_frames = sprite_get_number(headJutsuDashFromDown);
+			break;
 		}
 	break;
 }
@@ -193,6 +201,16 @@ switch(state){
 			draw_sprite_ext(hairJumpJutsuSpit, img_index, x, y-5, 1*(charDirection), 1, 0, global.hairColor, 1);
 			draw_sprite_ext(clothingJumpJutsuSpit, img_index, x, y-5, 1*(charDirection), 1, 0, c_white, 1);
 			draw_sprite_ext(eyesJumpJutsuSpit, img_index, x, y-5, 1*(charDirection), 1, 0, global.eyesColor, 1);
+		} else if(lastState == "chargingChakra"){
+			draw_sprite_ext(headChargingChakra, img_index, x, y-5, 1*(charDirection), 1, 0, c_white, 1);
+			draw_sprite_ext(hairChargingChakra, img_index, x, y-5, 1*(charDirection), 1, 0, global.hairColor, 1);
+			draw_sprite_ext(clothingChargingChakra, img_index, x, y-5, 1*(charDirection), 1, 0, c_white, 1);
+			draw_sprite_ext(eyesChargingChakra, img_index, x, y-5, 1*(charDirection), 1, 0, global.eyesColor, 1);
+		} else if(lastState == "jutsuDashFromDown"){
+			draw_sprite_ext(headJutsuDashFromDown, img_index, x, y-5, 1*(charDirection), 1, 0, c_white, 1);
+			draw_sprite_ext(hairJutsuDashFromDown, img_index, x, y-5, 1*(charDirection), 1, 0, global.hairColor, 1);
+			draw_sprite_ext(clothingJutsuDashFromDown, img_index, x, y-5, 1*(charDirection), 1, 0, c_white, 1);
+			draw_sprite_ext(eyesJutsuDashFromDown, img_index, x, y-5, 1*(charDirection), 1, 0, global.eyesColor, 1);
 		}
 	break;
 	

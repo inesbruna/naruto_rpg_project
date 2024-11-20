@@ -12,16 +12,26 @@ var _throw = keyboard_check(ord("X"));
 var _defense = keyboard_check(ord("S"));
 var _charge = keyboard_check(ord("D"));
 var _transform = keyboard_check_pressed(ord("C"));
-var _skill1 = keyboard_check_pressed(ord("Q"));
-var _skill2 = keyboard_check_pressed(ord("W"));
-var _skill3 = keyboard_check_pressed(ord("E"));
-var _skill4 = keyboard_check_pressed(ord("R"));
-var _skill5 = keyboard_check_pressed(ord("T"));
-var _skill6 = keyboard_check_pressed(ord("Y"));
 var _pickup = keyboard_check_pressed(ord("Z"));
 
 //Gravity
-vspd = vspd + grv;
+
+//Stop mid-air
+if (state == "wait" && lastState == "jumpJutsuSpit" && !wasGrounded){
+	//Acceleration and Break
+	if vspd<0{
+	vspd+=0.4
+	if vspd>=0{
+	vspd=0;}}
+
+	if vspd>0{
+	vspd-=0.4
+	if vspd<=0{
+	vspd=0;}}
+	
+} else {
+	vspd = vspd +grv;
+}
 
 if(place_meeting(x,y+vspd, obj_wall)){
 	while(!place_meeting(x,y+sign(vspd),obj_wall)){
@@ -85,11 +95,50 @@ if(state = "combo" || state = "dash" || state = "hit" || state = "defense"){
 	if hspd>4{hspd=4}
 }
 
+function skills(){
+	var _skill1 = keyboard_check_pressed(ord("Q"));
+	var _skill2 = keyboard_check_pressed(ord("W"));
+	var _skill3 = keyboard_check_pressed(ord("E"));
+	var _skill4 = keyboard_check_pressed(ord("R"));
+	var _skill5 = keyboard_check_pressed(ord("T"));
+	var _skill6 = keyboard_check_pressed(ord("Y"));
+
+	//Skill 1
+	if (_skill1 && !skill1_cooldown){
+		alarm[6] = scr_shadowclon(1);
+	}
+		
+	//Skill 2
+	if (_skill2 && !skill2_cooldown){
+		alarm[7] = scr_doryuheki(2);
+	}
+				
+	//Skill 3
+	if (_skill3 && !skill3_cooldown){
+		alarm[8] = scr_goukakyuu(3);
+	}
+		
+	//Skill 4
+	if (_skill4 && !skill4_cooldown){
+		alarm[9] = scr_daitoppa(4);
+	}
+		
+	//Skill 5
+	if (_skill5 && !skill5_cooldown){
+		alarm[10] = scr_suiryuudan(5);
+	}
+	
+	//Skill 6
+	if (_skill6 && !skill6_cooldown){
+		alarm[11] = scr_chidori(6);
+	}
+}
+
 switch(state){
 	case "free":
 	
 		//Movement
-		move = _right - _left;
+		var move = _right - _left;
 		hspd = move * 4;
 		
 		//Direction
@@ -188,25 +237,7 @@ switch(state){
 			state = "wait";
 		}
 		
-		//Skill 1
-		if (_skill1){
-			alarm[6] = scr_shadowclon(skill1_cooldown);
-		}
-		
-		//Skill 2
-		if (_skill2 && !skill2_cooldown){
-			alarm[7] = scr_doryuheki(skill2_cooldown);
-		}
-				
-		//Skill 3
-		if (_skill3 && !skill3_cooldown){
-			alarm[8] = scr_goukakyuu(skill3_cooldown);
-		}
-		
-		//Skill 4
-		if (_skill4 && !skill4_cooldown){
-			alarm[9] = scr_daitoppa(skill4_cooldown);
-		}
+		skills();
 		
 	break;
 	
@@ -229,6 +260,9 @@ switch(state){
 		if (place_meeting(x,y,obj_enemyhitbox)){
 			state = "hit";	
 		}
+		
+		skills();
+		
 	break;
 	
 	case "falling":
@@ -347,6 +381,12 @@ switch(state){
 		} else {
 		     timer--;
 		}
+		
+		//Dash
+		if((lastState == "jutsuDashFromDown") && (img_index > 1 && img_index <= 2)){
+			hspd += 3;
+		}
+		
 	break;
 	
 	case "hit":
@@ -426,6 +466,11 @@ switch(state){
 		global.player_chakra += 0.5;
 		if(keyboard_check_released(ord("D"))){
 			state = "free";	
+		}
+		
+		//Getting hit
+		if (place_meeting(x,y,obj_enemyhitbox)){
+			state = "hit";	
 		}
 	break;
 	

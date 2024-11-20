@@ -29,6 +29,8 @@ skill1_cooldown = false;
 skill2_cooldown = false;
 skill3_cooldown = false;
 skill4_cooldown = false;
+skill5_cooldown = false;
+skill6_cooldown = false;
 
 skill1 = false;
 usingSkill1 = false;
@@ -41,12 +43,13 @@ lastPress = "";
 dashTimer = false;
 dashCooldown = false;
 
-//----------physics----------
+//----------Physics----------
 hspd = 0;
 vspd = 0;
 acc = 2;
 grv = 0.3;
 grounded = false;
+wasGrounded = true;
 
 //character stance
 headStance = 0;
@@ -121,3 +124,8 @@ headJumpJutsuSpit = 0;
 hairJumpJutsuSpit = 0;
 eyesJumpJutsuSpit = 0;
 clothingJumpJutsuSpit = 0;
+//character jutsu dash from down
+headJutsuDashFromDown = 0;
+hairJutsuDashFromDown = 0;
+eyesJutsuDashFromDown = 0;
+clothingJutsuDashFromDown = 0;

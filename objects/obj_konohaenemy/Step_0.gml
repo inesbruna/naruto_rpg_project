@@ -257,3 +257,5 @@ if(hp <= 0){
 	state = "dead";
 	sprite_index = spr_konohaenemy_dead;
 }
+
+event_inherited();

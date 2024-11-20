@@ -2,7 +2,7 @@
 
 if(image_index > 2 && image_index <= 4){
 	//Create Hitbox
-	var _hitbox = instance_create_depth(x, y, depth, obj_goukakyuu_hitbox);
+	var _hitbox = instance_create_depth(x, y, depth, obj_daitoppa_hitbox);
 	_hitbox.player = self;
 	_hitbox.image_xscale = obj_player.charDirection;	
 }

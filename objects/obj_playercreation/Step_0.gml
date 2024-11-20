@@ -1,10 +1,42 @@
-if(animation > 14){
-	animation = 0;	
-} else if (animation < 0) {
-	animation = 14;	
+//Devmode
+if(keyboard_check_pressed(vk_f1)){
+	if(!devmode){
+		devmode = true;	
+	} else {
+		devmode = false;
+	}
 }
 
-image_index = image;
+if(devmode){
+	image_index = image;
+	
+	//Frame Control		
+	if(keyboard_check_pressed(vk_up)){
+		image++;
+	}
+		
+	if(keyboard_check_pressed(vk_down)){
+		image--;
+	}
+	
+} else {
+	image_speed = 0.3;	
+}
+
+//Animation Control
+if(animation > 15){
+	animation = 0;	
+} else if (animation < 0) {
+	animation = 15;	
+}
+
+if(keyboard_check_pressed(vk_left)){
+	animation--;
+}
+	
+if(keyboard_check_pressed(vk_right)){
+	animation++;
+}
 
 switch(animation){
 		case 0:	
@@ -139,5 +171,14 @@ switch(animation){
 	hair3Animation = spr_hair3_jumpJutsuSpit;
 	clothingAnimation = spr_clothing0_jumpJutsuSpit;
 	eyesAnimation = spr_eyes_jumpJutsuSpit;
+	break;
+		case 15:	
+	headAnimation = spr_head_jutsuDashFromDown;
+	hair0Animation = spr_hair0_jutsuDashFromDown;
+	hair1Animation = spr_hair1_jumpJutsuSpit;
+	hair2Animation = spr_hair2_jumpJutsuSpit;
+	hair3Animation = spr_hair3_jumpJutsuSpit;
+	clothingAnimation = spr_clothing0_jutsuDashFromDown;
+	eyesAnimation = spr_eyes_jutsuDashFromDown;
 	break;
 }
