@@ -32,7 +32,7 @@
   "origin":9,
   "parent":{
     "name":"eyes",
-    "path":"folders/Sprites/Player/head/eyes.yy",
+    "path":"folders/Sprites/Player/Base/head/eyes.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",
@@ -100,7 +100,7 @@
     "visibleRange":null,
     "volume":1.0,
     "xorigin":12,
-    "yorigin":35,
+    "yorigin":46,
   },
   "swatchColours":null,
   "swfPrecision":0.5,

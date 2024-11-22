@@ -31,7 +31,7 @@
   "origin":7,
   "parent":{
     "name":"eyes",
-    "path":"folders/Sprites/Player/head/eyes.yy",
+    "path":"folders/Sprites/Player/Base/head/eyes.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",

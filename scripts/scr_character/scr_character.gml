@@ -1,5 +1,4 @@
-// Os recursos de script mudaram para a v2.3.0; veja
-// https://help.yoyogames.com/hc/en-us/articles/360005277377 para obter mais informações
+// Character Creation
 function scr_character(){
 	//STANCE
 	switch(global.head){
@@ -58,7 +57,7 @@ function scr_character(){
 		hairThrow = spr_hair1_throw;
 		hairJutsuSpit = spr_hair1_jutsuSpit;
 		hairJumpJutsuSpit = spr_hair1_jumpJutsuSpit;
-		hairJutsuDashFromDown = spr_hair0_jutsuDashFromDown;
+		hairJutsuDashFromDown = spr_hair1_jutsuDashFromDown;
 		break;
 		case 2: 
 		hairStance = spr_hair2_stance;

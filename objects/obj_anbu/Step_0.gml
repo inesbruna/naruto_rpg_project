@@ -258,3 +258,5 @@ if(hp <= 0){
 	state = "dead";
 	sprite_index = spr_anbu_dead;
 }
+
+event_inherited();

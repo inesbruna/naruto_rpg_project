@@ -122,19 +122,7 @@ function InventoryEquipment(item){ //Verifica se um item esta sendo equipado e a
 	}
 	//FOR COSTUMES
 	if (item = 29){
-		obj_player.naruto = spr_narutoJacket;
-		obj_player.narutoAttack = spr_narutoJacket_attack;
-		obj_player.narutoAttack2 = spr_narutoJacket_attack2;
-		obj_player.narutoAttack3 = spr_narutoJacket_attack3;
-		obj_player.narutoCharging = spr_narutoJacket_charging;
-		obj_player.narutoDead = spr_narutoJacket_dead;
-		obj_player.narutoDefense = spr_narutoJacket_defense;
-		obj_player.narutoFalling = spr_narutoJacket_falling;
-		obj_player.narutoHit = spr_narutoJacket_hit;
-		obj_player.narutoJumping = spr_narutoJacket_jumping;
-		obj_player.narutoPickup = spr_narutoJacket_pickup;
-		obj_player.narutoRunning = spr_narutoJacket_running;
-		obj_player.narutoTransform = spr_narutoJacket_transform;
+		//In developtment
 	}
 }
 
@@ -153,19 +141,7 @@ function InventoryDesequipment(item){ //Verifica se um item esta sendo desequipa
 	}
 	//FOR COSTUMES
 	if (item = 29){
-		obj_player.naruto = spr_naruto;
-		obj_player.narutoAttack = spr_naruto_attack;
-		obj_player.narutoAttack2 = spr_naruto_attack2;
-		obj_player.narutoAttack3 = spr_naruto_attack3;
-		obj_player.narutoCharging = spr_naruto_charging;
-		obj_player.narutoDead = spr_naruto_dead;
-		obj_player.narutoDefense = spr_naruto_defense;
-		obj_player.narutoFalling = spr_naruto_falling;
-		obj_player.narutoHit = spr_naruto_hit;
-		obj_player.narutoJumping = spr_naruto_jumping;
-		obj_player.narutoPickup = spr_naruto_pickup;
-		obj_player.narutoRunning = spr_naruto_running;
-		obj_player.narutoTransform = spr_naruto_transform;
+		//In developtment
 	}
 }
 

@@ -7,7 +7,6 @@ var goukakyuu_collision = place_meeting(x, y, obj_goukakyuu_hitbox);
 var suiryuudan_collision = place_meeting(x, y, obj_suiryuudan_hitbox);
 
 //Collision
-
 if (chidori_collision || chidoriE_collision || daitoppa_collision || goukakyuu_collision || suiryuudan_collision){
 	state = "hit";
 

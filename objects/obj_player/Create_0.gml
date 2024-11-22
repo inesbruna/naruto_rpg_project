@@ -22,6 +22,10 @@ afterCombo = false; //Cooldown to make a combo again
 
 timer = 0;
 
+//Transforms
+transformation = 0; //Base
+jinchuuriki_color = c_red;
+
 //Cooldowns
 throwCooldown = false;
 substitutionCooldown = false;
@@ -51,6 +55,11 @@ grv = 0.3;
 grounded = false;
 wasGrounded = true;
 
+//current
+head = 0;
+hair = 0;
+clothing = 0;
+eyes = 0;
 //character stance
 headStance = 0;
 hairStance = 0;

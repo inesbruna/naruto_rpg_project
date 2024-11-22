@@ -30,7 +30,7 @@
   "origin":9,
   "parent":{
     "name":"hair2",
-    "path":"folders/Sprites/Player/hair/hair2.yy",
+    "path":"folders/Sprites/Player/Base/hair/hair2.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",

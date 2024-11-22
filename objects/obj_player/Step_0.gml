@@ -237,6 +237,23 @@ switch(state){
 			state = "wait";
 		}
 		
+		//Transform
+		if(_transform){
+			if(transformation == 0){
+				transformation = 1;
+				global.player_healthmax += 100;
+				global.player_chakramax += 50;
+				global.player_strength += 10;
+				global.player_intelligence += 10;
+			} else {
+				transformation = 0;
+				global.player_healthmax -= 100;
+				global.player_chakramax -= 50;
+				global.player_strength -= 10;
+				global.player_intelligence -= 10;
+			}
+		}
+		
 		skills();
 		
 	break;
@@ -354,9 +371,12 @@ switch(state){
 	break;
 	
 	case "wait":
-		//Getting hit
-		if (place_meeting(x,y,obj_enemyhitbox)){
-			state = "hit";	
+	
+		if(lastState != "jutsuDashFromDown"){
+			//Getting hit
+			if (place_meeting(x,y,obj_enemyhitbox)){
+				state = "hit";	
+			}
 		}
 		
 		//Acceleration and Break
@@ -384,7 +404,7 @@ switch(state){
 		
 		//Dash
 		if((lastState == "jutsuDashFromDown") && (img_index > 1 && img_index <= 2)){
-			hspd += 3;
+			hspd += 3*charDirection;
 		}
 		
 	break;

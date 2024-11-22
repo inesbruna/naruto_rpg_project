@@ -175,7 +175,7 @@ switch(animation){
 		case 15:	
 	headAnimation = spr_head_jutsuDashFromDown;
 	hair0Animation = spr_hair0_jutsuDashFromDown;
-	hair1Animation = spr_hair1_jumpJutsuSpit;
+	hair1Animation = spr_hair1_jutsuDashFromDown;
 	hair2Animation = spr_hair2_jumpJutsuSpit;
 	hair3Animation = spr_hair3_jumpJutsuSpit;
 	clothingAnimation = spr_clothing0_jutsuDashFromDown;

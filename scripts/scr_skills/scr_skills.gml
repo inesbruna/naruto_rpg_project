@@ -1,3 +1,4 @@
+//Skills
 function scr_doryuheki(skill){
 	if(global.player_chakra >= 50 && grounded){
 		img_frame = 0;
@@ -118,7 +119,7 @@ function scr_chidori(skill){
 		state = "wait";
 
 		audio_play_sound(snd_chidori, 0, false);
-		instance_create_depth(x, y-150, -99, obj_chidori);
+		instance_create_depth(x, y, -99, obj_chidori);
 
 		scr_cooldown(skill);
 		
@@ -129,6 +130,7 @@ function scr_chidori(skill){
 	}
 }
 
+//CD
 function scr_cooldown(skill){
 	switch (skill){
 		case 1: skill1_cooldown = true;
