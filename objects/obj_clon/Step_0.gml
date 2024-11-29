@@ -1,6 +1,9 @@
 /// @description State Machine
 //Character
-scr_character();
+scr_clonchar();
+
+//Update transformation
+transformation = obj_player.transformation;
 
 //Gravity
 vspd = vspd + grv;
@@ -86,7 +89,7 @@ switch(state){
 	case "chase_player":
 		if (hspd != 0) charDirection = sign(hspd);
 		vir = sign(obj_player.x - x);
-		hspd = vir * 3;
+		hspd = vir * 4;
 			
 		//Chase
 		if(instance_exists(obj_enemyparent) && !(obj_enemyparent.state = "dead")){
@@ -107,7 +110,7 @@ switch(state){
 		
 		if (hspd != 0) charDirection = sign(hspd);
 		vir = sign(obj_enemyparent.x - x);
-		hspd = vir * 3;
+		hspd = vir * 4;
 		
 		//Free
 		if ((distance_to_object(obj_enemyparent) > 300) || (distance_to_object(obj_enemyparent) < 8)){

@@ -86,6 +86,7 @@
   },
   "name":"Naruto RPG Project",
   "resources":[
+    {"id":{"name":"fnt_debug","path":"fonts/fnt_debug/fnt_debug.yy",},},
     {"id":{"name":"fnt_menu","path":"fonts/fnt_menu/fnt_menu.yy",},},
     {"id":{"name":"fnt_player_name","path":"fonts/fnt_player_name/fnt_player_name.yy",},},
     {"id":{"name":"fnt_textbox","path":"fonts/fnt_textbox/fnt_textbox.yy",},},
@@ -145,8 +146,10 @@
     {"id":{"name":"menu","path":"rooms/menu/menu.yy",},},
     {"id":{"name":"training_grounds","path":"rooms/training_grounds/training_grounds.yy",},},
     {"id":{"name":"scr_character","path":"scripts/scr_character/scr_character.yy",},},
+    {"id":{"name":"scr_clonchar","path":"scripts/scr_clonchar/scr_clonchar.yy",},},
     {"id":{"name":"scr_game_text","path":"scripts/scr_game_text/scr_game_text.yy",},},
     {"id":{"name":"scr_inventory","path":"scripts/scr_inventory/scr_inventory.yy",},},
+    {"id":{"name":"scr_offsets","path":"scripts/scr_offsets/scr_offsets.yy",},},
     {"id":{"name":"scr_skills","path":"scripts/scr_skills/scr_skills.yy",},},
     {"id":{"name":"scr_textbox","path":"scripts/scr_textbox/scr_textbox.yy",},},
     {"id":{"name":"scr_transformations","path":"scripts/scr_transformations/scr_transformations.yy",},},

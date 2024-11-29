@@ -13,6 +13,13 @@ canAttack = true;
 lastState = "";
 timer = 0;
 
+//Transformation
+transformation = 0;
+jinchuuriki_color = obj_player.jinchuuriki_color;
+
+//Transformation Offset
+scr_offsets();
+
 //Lifetime
 lifetime = 3000;
 
@@ -20,7 +27,18 @@ lifetime = 3000;
 hp = global.player_healthmax/5;
 hpmax = global.player_healthmax/5;
 
+//Animation Control
+img_speed = 8;
+img_frame = 0;
+img_index = 0;
+total_frames = 0;
+
 //Assets
+//actual
+head = 0;
+hair = 0;
+eyes = 0;
+clothing = 0;
 //character stance
 headStance = 0;
 hairStance = 0;
@@ -32,10 +50,10 @@ hairRunning = 0;
 eyesRunning = 0;
 clothingRunning = 0;
 //character attack
-headCombo3 = 0;
-hairCombo3 = 0;
-eyesCombo3 = 0;
-clothingCombo3 = 0;
+headAttack = 0;
+hairAttack = 0;
+eyesAttack = 0;
+clothingAttack = 0;
 //character hit
 headHit = 0;
 hairHit = 0;

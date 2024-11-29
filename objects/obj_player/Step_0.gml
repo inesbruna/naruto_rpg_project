@@ -15,7 +15,6 @@ var _transform = keyboard_check_pressed(ord("C"));
 var _pickup = keyboard_check_pressed(ord("Z"));
 
 //Gravity
-
 //Stop mid-air
 if (state == "wait" && lastState == "jumpJutsuSpit" && !wasGrounded){
 	//Acceleration and Break
@@ -136,10 +135,11 @@ function skills(){
 
 switch(state){
 	case "free":
-	
+		
 		//Movement
 		var move = _right - _left;
 		hspd = move * 4;
+		
 		
 		//Direction
 		if(_left){

@@ -19,7 +19,7 @@ timer = 0;
 
 //Transforms
 transformation = 0; //Base
-jinchuuriki_color = c_red;
+jinchuuriki_color = c_purple;
 
 //Cooldowns
 throwCooldown = false;
@@ -61,3 +61,6 @@ headStance = 0;
 hairStance = 0;
 clothingStance = 0;
 eyesStance = 0;
+
+//Offsets
+scr_offsets();

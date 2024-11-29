@@ -59,6 +59,7 @@
     {"name":"Naruto Portraits","order":1,"path":"folders/Sprites/Textbox/Naruto Portraits.yy",},
   ],
   "ResourceOrderSettings":[
+    {"name":"fnt_debug","order":3,"path":"fonts/fnt_debug/fnt_debug.yy",},
     {"name":"fnt_menu","order":2,"path":"fonts/fnt_menu/fnt_menu.yy",},
     {"name":"fnt_textbox","order":1,"path":"fonts/fnt_textbox/fnt_textbox.yy",},
     {"name":"obj_back","order":3,"path":"objects/obj_back/obj_back.yy",},
@@ -106,7 +107,9 @@
     {"name":"konoha","order":4,"path":"rooms/konoha/konoha.yy",},
     {"name":"menu","order":2,"path":"rooms/menu/menu.yy",},
     {"name":"scr_character","order":3,"path":"scripts/scr_character/scr_character.yy",},
+    {"name":"scr_clonchar","order":7,"path":"scripts/scr_clonchar/scr_clonchar.yy",},
     {"name":"scr_game_text","order":2,"path":"scripts/scr_game_text/scr_game_text.yy",},
+    {"name":"scr_offsets","order":6,"path":"scripts/scr_offsets/scr_offsets.yy",},
     {"name":"scr_skills","order":4,"path":"scripts/scr_skills/scr_skills.yy",},
     {"name":"scr_textbox","order":1,"path":"scripts/scr_textbox/scr_textbox.yy",},
     {"name":"scr_transformations","order":5,"path":"scripts/scr_transformations/scr_transformations.yy",},
