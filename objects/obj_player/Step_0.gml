@@ -245,12 +245,22 @@ switch(state){
 				global.player_chakramax += 50;
 				global.player_strength += 10;
 				global.player_intelligence += 10;
+				
+				timer = 35;
+				lastState = "transform";
+				state = "wait";
+				img_frame = 0;
 			} else {
 				transformation = 0;
 				global.player_healthmax -= 100;
 				global.player_chakramax -= 50;
 				global.player_strength -= 10;
 				global.player_intelligence -= 10;
+				
+				timer = 35;
+				lastState = "detransform";
+				state = "wait";
+				img_frame = 0;
 			}
 		}
 		

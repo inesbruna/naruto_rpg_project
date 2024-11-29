@@ -1,3 +1,5 @@
+var max_animations = 17;
+
 //Devmode
 if(keyboard_check_pressed(vk_f1)){
 	if(!devmode){
@@ -7,27 +9,45 @@ if(keyboard_check_pressed(vk_f1)){
 	}
 }
 
-if(devmode){
-	image_index = image;
-	
+if(keyboard_check_pressed(vk_f2)){
+	if(transformation == 0){
+		transformation = 1;
+	} else {
+		transformation = 0;
+	}	
+}
+
+// Get image_number
+total_frames = sprite_get_number(headAnimation);
+
+if(!devmode){
+	//Image Index
+	img_index = ++img_frame div img_speed;
+}
+
+//Reset img_frame
+if (img_index > total_frames - 1) { //End animation
+	img_frame = 0;
+	//Update image index
+	img_index = img_frame div img_speed;
+}
+
+if(devmode){	
 	//Frame Control		
 	if(keyboard_check_pressed(vk_up)){
-		image++;
+		img_index++;
 	}
 		
 	if(keyboard_check_pressed(vk_down)){
-		image--;
+		img_index--;
 	}
-	
-} else {
-	image_speed = 0.3;	
 }
 
 //Animation Control
-if(animation > 15){
+if(animation > max_animations){
 	animation = 0;	
 } else if (animation < 0) {
-	animation = 15;	
+	animation = max_animations;	
 }
 
 if(keyboard_check_pressed(vk_left)){
@@ -109,6 +129,7 @@ switch(animation){
 	hair2Animation = spr_hair2_hit;
 	hair3Animation = spr_hair3_hit;
 	clothingAnimation = spr_clothing0_hit;
+	eyesAnimation = noone;
 	break;
 		case 8:	
 	headAnimation = spr_head_dead;
@@ -117,6 +138,7 @@ switch(animation){
 	hair2Animation = spr_hair2_dead;
 	hair3Animation = spr_hair3_dead;
 	clothingAnimation = spr_clothing0_dead;
+	eyesAnimation = noone;
 	break;
 		case 9:	
 	headAnimation = spr_head_defense;
@@ -180,5 +202,23 @@ switch(animation){
 	hair3Animation = spr_hair3_jumpJutsuSpit;
 	clothingAnimation = spr_clothing0_jutsuDashFromDown;
 	eyesAnimation = spr_eyes_jutsuDashFromDown;
+	break;
+		case 16:	
+	headAnimation = spr_head_transform1tail;
+	hair0Animation = spr_hair0_transform1tail;
+	hair1Animation = spr_hair1_jutsuDashFromDown;
+	hair2Animation = spr_hair2_jumpJutsuSpit;
+	hair3Animation = spr_hair3_jumpJutsuSpit;
+	clothingAnimation = spr_clothing0_transform1tail;
+	eyesAnimation = spr_eyes_transform1tail;
+	break;
+		case 17:	
+	headAnimation = spr_head_running_tail;
+	hair0Animation = spr_hair0_running_tail;
+	hair1Animation = spr_hair1_jutsuDashFromDown;
+	hair2Animation = spr_hair2_jumpJutsuSpit;
+	hair3Animation = spr_hair3_jumpJutsuSpit;
+	clothingAnimation = spr_clothing0_running_tail;
+	eyesAnimation = spr_eyes_running_tail;
 	break;
 }

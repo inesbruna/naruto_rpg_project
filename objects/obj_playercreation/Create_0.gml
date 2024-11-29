@@ -1,6 +1,15 @@
 //Dev Mode
 devmode = false;
 
+//index
+total_frames = 0;
+img_frame = 0;
+img_index = 0;
+img_speed = 8;
+
+//transformation
+transformation = 0;
+
 //assets
 hair = 0;
 head = 0;

@@ -31,10 +31,7 @@
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
   "solid":false,
-  "spriteId":{
-    "name":"spr_naruto",
-    "path":"sprites/spr_naruto/spr_naruto.yy",
-  },
+  "spriteId":null,
   "spriteMaskId":null,
   "visible":true,
 }
