@@ -4,7 +4,7 @@
   "bboxMode":0,
   "bbox_bottom":24,
   "bbox_left":15,
-  "bbox_right":26,
+  "bbox_right":31,
   "bbox_top":7,
   "collisionKind":1,
   "collisionTolerance":0,
@@ -110,5 +110,5 @@
   },
   "type":0,
   "VTile":false,
-  "width":32,
+  "width":37,
 }

@@ -29,9 +29,9 @@ function scr_character(){
 				
 				switch(global.hair){ //HAIR
 					case 0: hair = spr_hair0_running_tail; break;
-					case 1: hair = spr_hair1_running; break;
-					case 2: hair = spr_hair2_running; break;
-					case 3: hair = spr_hair3_running; break;
+					case 1: hair = spr_hair1_running_tail; break;
+					case 2: hair = spr_hair2_running_tail; break;
+					case 3: hair = spr_hair3_running_tail; break;
 				}
 				
 				switch(global.clothing){ //CLOTHING
@@ -160,7 +160,28 @@ function scr_character(){
 				
 				eyes = spr_eyes_defense; // EYES
 
-		break
+		break;
+		
+		case "charge":
+			switch(global.head){ //HEAD
+					case 0: head = spr_head_chargingChakra; break;
+				}
+				
+				switch(global.hair){ //HAIR
+					case 0: hair = spr_hair0_chargingChakra; break;
+					case 1: hair = spr_hair1_chargingChakra; break;
+					case 2: hair = spr_hair2_chargingChakra; break;
+					case 3: hair = spr_hair3_chargingChakra; break;
+				}
+				
+				switch(global.clothing){ //CLOTHING
+					case 0: clothing = spr_clothing0_chargingChakra; break;
+				}
+				
+				eyes = spr_eyes_chargingChakra; // EYES
+							
+			draw_sprite(spr_chakra, img_index, x, y); //Effect
+		break;
 	
 		case "wait":
 			switch(lastState){
@@ -362,8 +383,8 @@ function scr_character(){
 						switch(global.hair){ //HAIR
 							case 0: hair = spr_hair0_jutsuDashFromDown; break;
 							case 1: hair = spr_hair1_jutsuDashFromDown; break;
-							case 2: hair = spr_hair2_combo3; break;
-							case 3: hair = spr_hair3_combo3; break;
+							case 2: hair = spr_hair2_jutsuDashFromDown; break;
+							case 3: hair = spr_hair3_jutsuDashFromDown; break;
 						}
 				
 						switch(global.clothing){ //CLOTHING
@@ -380,9 +401,9 @@ function scr_character(){
 				
 						switch(global.hair){ //HAIR
 							case 0: hair = spr_hair0_transform1tail; break;
-							case 1: hair = spr_hair1_combo3; break;
-							case 2: hair = spr_hair2_combo3; break;
-							case 3: hair = spr_hair3_combo3; break;
+							case 1: hair = spr_hair1_transform1tail; break;
+							case 2: hair = spr_hair2_transform1tail; break;
+							case 3: hair = spr_hair3_transform1tail; break;
 						}
 				
 						switch(global.clothing){ //CLOTHING
@@ -400,9 +421,9 @@ function scr_character(){
 				
 						switch(global.hair){ //HAIR
 							case 0: hair = spr_hair0_transform1tail; break;
-							case 1: hair = spr_hair1_combo3; break;
-							case 2: hair = spr_hair2_combo3; break;
-							case 3: hair = spr_hair3_combo3; break;
+							case 1: hair = spr_hair1_transform1tail; break;
+							case 2: hair = spr_hair2_transform1tail; break;
+							case 3: hair = spr_hair3_transform1tail; break;
 						}
 				
 						switch(global.clothing){ //CLOTHING

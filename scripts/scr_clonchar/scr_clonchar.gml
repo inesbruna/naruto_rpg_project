@@ -26,9 +26,9 @@ function scr_clonchar(){
 				
 		switch(global.hair){ //HAIR
 			case 0: hairRunning = spr_hair0_running_tail; break;
-			case 1: hairRunning = spr_hair1_running; break;
-			case 2: hairRunning = spr_hair2_running; break;
-			case 3: hairRunning = spr_hair3_running; break;
+			case 1: hairRunning = spr_hair1_running_tail; break;
+			case 2: hairRunning = spr_hair2_running_tail; break;
+			case 3: hairRunning = spr_hair3_running_tail; break;
 		}
 				
 		switch(global.clothing){ //CLOTHING

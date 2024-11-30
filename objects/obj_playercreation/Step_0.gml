@@ -198,26 +198,26 @@ switch(animation){
 	headAnimation = spr_head_jutsuDashFromDown;
 	hair0Animation = spr_hair0_jutsuDashFromDown;
 	hair1Animation = spr_hair1_jutsuDashFromDown;
-	hair2Animation = spr_hair2_jumpJutsuSpit;
-	hair3Animation = spr_hair3_jumpJutsuSpit;
+	hair2Animation = spr_hair2_jutsuDashFromDown;
+	hair3Animation = spr_hair3_jutsuDashFromDown;
 	clothingAnimation = spr_clothing0_jutsuDashFromDown;
 	eyesAnimation = spr_eyes_jutsuDashFromDown;
 	break;
 		case 16:	
 	headAnimation = spr_head_transform1tail;
 	hair0Animation = spr_hair0_transform1tail;
-	hair1Animation = spr_hair1_jutsuDashFromDown;
-	hair2Animation = spr_hair2_jumpJutsuSpit;
-	hair3Animation = spr_hair3_jumpJutsuSpit;
+	hair1Animation = spr_hair1_transform1tail;
+	hair2Animation = spr_hair2_transform1tail;
+	hair3Animation = spr_hair3_transform1tail;
 	clothingAnimation = spr_clothing0_transform1tail;
 	eyesAnimation = spr_eyes_transform1tail;
 	break;
 		case 17:	
 	headAnimation = spr_head_running_tail;
 	hair0Animation = spr_hair0_running_tail;
-	hair1Animation = spr_hair1_jutsuDashFromDown;
-	hair2Animation = spr_hair2_jumpJutsuSpit;
-	hair3Animation = spr_hair3_jumpJutsuSpit;
+	hair1Animation = spr_hair1_running_tail;
+	hair2Animation = spr_hair2_running_tail;
+	hair3Animation = spr_hair3_running_tail;
 	clothingAnimation = spr_clothing0_running_tail;
 	eyesAnimation = spr_eyes_running_tail;
 	break;

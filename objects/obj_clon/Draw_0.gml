@@ -86,6 +86,7 @@ if(transformation == 0){
 if(transformation == 1){
 	// Jinchuuriki Ears + Tail
 	var anim = state;
+	var _ears = spr_ears;
 
 	if(anim != "wait"){
 		anim = state;
@@ -101,6 +102,7 @@ if(transformation == 1){
 		
 	} else if (anim = "chase" || anim = "chase_player") {
 		anim = "free";
+		_ears = spr_ears_running;
 		
 		var ears_x = offsets[$ anim].running.ears[0];
 		var ears_y = offsets[$ anim].running.ears[1];
@@ -123,7 +125,7 @@ if(transformation == 1){
 	}
 	
 	gpu_set_fog(true, jinchuuriki_color, 0, 0);
-	draw_sprite_ext(spr_ears, img_index, x + ears_x*(charDirection), y + ears_y, 1*(charDirection), 1, 0, c_white, 0.5);
+	draw_sprite_ext(_ears, img_index, x + ears_x*(charDirection), y + ears_y, 1*(charDirection), 1, 0, c_white, 0.5);
 	draw_sprite_ext(spr_tail, img_index, x + tail_x*(charDirection), y + tail_y, 1*(charDirection), 1, 0, c_white, 0.5);
 	gpu_set_fog(false, jinchuuriki_color, 0, 0);
 	
