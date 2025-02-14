@@ -34,5 +34,5 @@
     "path":"sprites/spr_naruto_attackhitbox/spr_naruto_attackhitbox.yy",
   },
   "spriteMaskId":null,
-  "visible":true,
+  "visible":false,
 }

@@ -1,17 +1,20 @@
 {
   "$GMObject":"",
-  "%Name":"obj_narutohitboxskill1",
+  "%Name":"obj_sasukeNPC",
   "eventList":[
-    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":7,"eventType":7,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
+    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
-  "name":"obj_narutohitboxskill1",
+  "name":"obj_sasukeNPC",
   "overriddenProperties":[],
   "parent":{
-    "name":"player",
-    "path":"folders/Objetos/player.yy",
+    "name":"npcs",
+    "path":"folders/Objetos/npcs.yy",
   },
-  "parentObjectId":null,
+  "parentObjectId":{
+    "name":"obj_npcParent",
+    "path":"objects/obj_npcParent/obj_npcParent.yy",
+  },
   "persistent":false,
   "physicsAngularDamping":0.1,
   "physicsDensity":0.5,
@@ -30,9 +33,9 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_naruto_skill1hitbox",
-    "path":"sprites/spr_naruto_skill1hitbox/spr_naruto_skill1hitbox.yy",
+    "name":"spr_sasuke",
+    "path":"sprites/spr_sasuke/spr_sasuke.yy",
   },
   "spriteMaskId":null,
-  "visible":false,
+  "visible":true,
 }

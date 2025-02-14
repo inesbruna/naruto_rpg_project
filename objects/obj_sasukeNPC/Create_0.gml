@@ -1,3 +1,3 @@
 /// @description Inserir descrição aqui
 // Você pode escrever seu código neste editor
-instance_destroy();
+image_speed = 0.3;

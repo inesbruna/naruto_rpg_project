@@ -1,7 +1,7 @@
 /// @description Inserir descrição aqui
 // Você pode escrever seu código neste editor
 //clan select
-select = 0;
+select = "Hyuuga";
 
 //select coordenates
 select_x = 0;

@@ -4,6 +4,7 @@ scr_clonchar();
 
 //Update transformation
 transformation = obj_player.transformation;
+jinchuuriki_color = obj_player.jinchuuriki_color;
 
 //Gravity
 vspd = vspd + grv;

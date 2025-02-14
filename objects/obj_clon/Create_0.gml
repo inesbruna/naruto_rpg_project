@@ -15,7 +15,7 @@ timer = 0;
 
 //Transformation
 transformation = 0;
-jinchuuriki_color = obj_player.jinchuuriki_color;
+jinchuuriki_color = c_red;
 
 //Transformation Offset
 scr_offsets();

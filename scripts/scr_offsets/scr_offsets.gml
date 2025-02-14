@@ -89,6 +89,10 @@ function scr_offsets(){
 		jumpJutsuSpit: {
 	        ears: [0, 0],
 	        tail: [0, 0]  
+	    },
+		throwItem: {
+	        ears: [0, 0],
+	        tail: [0, 0]  
 	    }
 	};
 }

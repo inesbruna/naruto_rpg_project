@@ -9,4 +9,6 @@ global.hairColor = obj_playercreation.hairColor;
 global.eyesColor = obj_playercreation.eyesColor;
 global.player_clan = obj_characterCreation.select;
 
+
+instance_create_depth(0, 0, -999999, obj_fade);
 room_goto(konoha);

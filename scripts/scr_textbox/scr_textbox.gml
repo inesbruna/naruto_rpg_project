@@ -35,6 +35,16 @@ function scr_text(_text){
 			txtb_spr[page_number] = spr_textbox;
 		break;
 		
+		case "Sasuke":
+			speaker_sprite[page_number] = spr_sasuke_portrait_stance;
+			txtb_spr[page_number] = spr_textbox;
+		break;
+		
+		case "Sasuke Angry":
+			speaker_sprite[page_number] = spr_sasuke_portrait_angry;
+			txtb_spr[page_number] = spr_textbox;
+		break;
+		
 		case "Naruto Alert":
 			speaker_sprite[page_number] = spr_naruto_portrait_alert;
 			txtb_spr[page_number] = spr_textbox;

@@ -2,15 +2,15 @@
 // Você pode escrever seu código neste editor
 
 switch(select){
-	case 0: 
+	case "Hyuuga": 
 		select_x = x+(17*4);
 		select_y = y+(3*4);
 	break;
-	case 1:
+	case "Uzumaki":
 		select_x = x+(61*4);
 		select_y = y+(3*4);
 	break;
-	case 2:
+	case "Uchiha":
 		select_x = x+(105*4);
 		select_y = y+(3*4);
 	break;
@@ -20,19 +20,19 @@ switch(select){
 //uzumaki selection
 if(point_in_rectangle(mouse_x, mouse_y, uzumaki_x1, uzumaki_y1, uzumaki_x2, uzumaki_y2)){
 	if(mouse_check_button_pressed(mb_left)){
-		select = 0;	
+		select = "Hyuuga";	
 	}
 }
 //hyuuga selection
 if(point_in_rectangle(mouse_x, mouse_y, hyuuga_x1, hyuuga_y1, hyuuga_x2, hyuuga_y2)){
 	if(mouse_check_button_pressed(mb_left)){
-		select = 1;	
+		select = "Uzumaki";	
 	}
 }
 //uchiha selection
 if(point_in_rectangle(mouse_x, mouse_y, uchiha_x1, uchiha_y1, uchiha_x2, uchiha_y2)){
 	if(mouse_check_button_pressed(mb_left)){
-		select = 2;	
+		select = "Uchiha";	
 	}
 }
 

@@ -19,7 +19,7 @@ timer = 0;
 
 //Transforms
 transformation = 0; //Base
-jinchuuriki_color = c_purple;
+jinchuuriki_color = c_red;
 
 //Cooldowns
 throwCooldown = false;

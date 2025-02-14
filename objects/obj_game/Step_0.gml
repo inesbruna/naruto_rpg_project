@@ -1,6 +1,34 @@
 /// @description Inserir descrição aqui
 // Você pode escrever seu código neste editor
 
+if (room == character_creator){
+	if (roomLast == konoha){
+		roomLast = character_creator;
+	}
+}
+
+if (room == konoha){
+	if (roomLast == noone){
+		if(!instance_exists(obj_player)){
+			instance_create_depth(135, 230, -99999, obj_player);
+		} else {
+			obj_player.x = 135;
+			obj_player.y = 230;
+		}
+		
+		roomLast = konoha;
+	} else if (roomLast == character_creator){
+		if(!instance_exists(obj_player)){
+			instance_create_depth(135, 230, -99999, obj_player);
+		} else {
+			obj_player.x = lastX;
+			obj_player.y = lastY;
+		}
+		
+		roomLast = konoha;	
+	}
+}
+
 if(room == konoha){
 	tick += 0.01;
 	
