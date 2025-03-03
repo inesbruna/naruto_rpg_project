@@ -15,7 +15,7 @@ Naruto RPG Project is a game from the famous anime Naruto Shippuden in a sidescr
 
 - **Transformations:** achieve powerups through level progression and become stronger and more stylish.
 
-![Screenshot of the game.](https://imgur.com/qB6blVJ)
+!([Screenshot of the game.](https://i.imgur.com/qB6blVJ.png))
 
 ## **Download**
 ### **Executable**
