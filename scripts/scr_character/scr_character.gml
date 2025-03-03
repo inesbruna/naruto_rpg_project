@@ -218,8 +218,8 @@ function scr_character(){
 						switch(global.clothing){ //CLOTHING
 							case 0: clothing = spr_clothing0_combo2; break;
 						}
-				
-						eyes = spr_eyes_falling; // EYES
+						
+						eyes = spr_eyes_combo2; // EYES
 					} else {
 						switch(global.head){ //HEAD
 							case 0: head = spr_head_combo3; break;
@@ -395,22 +395,26 @@ function scr_character(){
 				break;
 						
 				case "transform":
-					switch(global.head){ //HEAD
-							case 0: head = spr_head_transform1tail; break;
-						}
+					if(transformation == 1){
+						switch(global.head){ //HEAD
+								case 0: head = spr_head_transform1tail; break;
+							}
 				
-						switch(global.hair){ //HAIR
-							case 0: hair = spr_hair0_transform1tail; break;
-							case 1: hair = spr_hair1_transform1tail; break;
-							case 2: hair = spr_hair2_transform1tail; break;
-							case 3: hair = spr_hair3_transform1tail; break;
-						}
+							switch(global.hair){ //HAIR
+								case 0: hair = spr_hair0_transform1tail; break;
+								case 1: hair = spr_hair1_transform1tail; break;
+								case 2: hair = spr_hair2_transform1tail; break;
+								case 3: hair = spr_hair3_transform1tail; break;
+							}
 				
-						switch(global.clothing){ //CLOTHING
-							case 0: clothing = spr_clothing0_transform1tail; break;
-						}
+							switch(global.clothing){ //CLOTHING
+								case 0: clothing = spr_clothing0_transform1tail; break;
+							}
 				
-						eyes = spr_eyes_transform1tail; // EYES
+							eyes = spr_eyes_transform1tail; // EYES
+					} else if (transformation == 2) {
+						draw_sprite_ext(spr_4Tails_transform, -1, x, y, 1*(charDirection), 1, 0, jinchuuriki_color, 1);
+					}
 									
 				break;
 						

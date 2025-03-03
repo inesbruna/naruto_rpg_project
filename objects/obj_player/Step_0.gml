@@ -240,7 +240,7 @@ if (room != character_creator){
 			}
 		
 			//Throw itens
-			if (_throw && !throwCooldown){
+			if (_throw && !throwCooldown && transformation != 2){
 				img_frame = 0;
 				hspd = 0;
 				throwCooldown = true;

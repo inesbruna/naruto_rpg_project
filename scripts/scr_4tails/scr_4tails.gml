@@ -7,7 +7,7 @@ function scr_4tails(){
 		anim = lastState;
 	}
 	 
-	if(anim = "free"){
+	if(anim == "free"){
 		image_speed = 0.15;
 		
 		if(keyboard_check(vk_left) || keyboard_check(vk_right) && grounded){
@@ -16,11 +16,11 @@ function scr_4tails(){
 			draw_sprite_ext(spr_4Tails_stance, -1, x, y, 1*(charDirection), 1, 0, jinchuuriki_color, 1);
 		
 		}
-	} else if (anim = "jumping"){
+	} else if (anim == "jumping"){
 		draw_sprite_ext(spr_4Tails_jumping, -1, x, y, 1*(charDirection), 1, 0, jinchuuriki_color, 1);
-	} else if (anim = "falling"){
+	} else if (anim == "falling"){
 		draw_sprite_ext(spr_4Tails_falling, -1, x, y, 1*(charDirection), 1, 0, jinchuuriki_color, 1);
-	} else if (anim = "combo"){
+	} else if (anim == "combo"){
 		image_speed = 0.2;
 		
 		if(comboCounter == 0){
@@ -30,11 +30,22 @@ function scr_4tails(){
 		} else {
 			draw_sprite_ext(spr_4Tails_combo3, -1, x, y, 1*(charDirection), 1, 0, jinchuuriki_color, 1);
 		}
-	} else if (anim = "hit"){
+	} else if (anim == "hit"){
 		draw_sprite_ext(spr_4Tails_hit, -1, x, y, 1*(charDirection), 1, 0, jinchuuriki_color, 1);
-	} else if (anim = "charge"){
+	} else if (anim == "charge"){
 		draw_sprite_ext(spr_4Tails_charging, -1, x, y, 1*(charDirection), 1, 0, jinchuuriki_color, 1);
-	} else if (anim = "defense"){
+	} else if (anim == "defense"){
 		draw_sprite_ext(spr_4Tails_defense, -1, x, y, 1*(charDirection), 1, 0, jinchuuriki_color, 1);
+	} else if (anim == "down"){
+		draw_sprite_ext(spr_4Tails_pickup, -1, x, y, 1*(charDirection), 1, 0, jinchuuriki_color, 1);
+	} else if (anim == "dead"){
+		draw_sprite_ext(spr_4Tails_dead, -1, x, y, 1*(charDirection), 1, 0, jinchuuriki_color, 1);
+		
+		if (image_index >= 2){
+			image_index = 2;	
+		}
+	} else if (anim = "transform"){
+		image_speed = 0.17;
+		draw_sprite_ext(spr_4Tails_transform, -1, x, y, 1*(charDirection), 1, 0, jinchuuriki_color, 1);
 	}
 }
